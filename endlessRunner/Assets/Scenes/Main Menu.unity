@@ -351,7 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b132e799efafc324eb0cd8ebc53ea6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasText1: {fileID: 1085389336}
+  textState: 0
+  menuText: {fileID: 1085389336}
 --- !u!1 &1085389334
 GameObject:
   m_ObjectHideFlags: 0

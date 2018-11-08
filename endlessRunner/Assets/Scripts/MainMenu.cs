@@ -2,13 +2,34 @@
 using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
-    public Image canvasText1;
+    public bool textState;
+    public Image menuText;
     void Start()
     {
-        Invoke("DisableText", 5f);//invoke after 5 seconds
+        textState = true;
     }
+
+    void Update()
+    {
+        if (textState == true)
+        {
+            Invoke("DisableText", 0.55f);
+        }
+        if (textState == false)
+        {
+            Invoke("EnableText", 0.55f);
+        }
+    }
+
     void DisableText()
     {
-        canvasText1.enabled = false;
+        menuText.enabled = false;
+        textState = false;
+    }
+
+    void EnableText()
+    {
+        menuText.enabled = true;
+        textState = true;
     }
 }
