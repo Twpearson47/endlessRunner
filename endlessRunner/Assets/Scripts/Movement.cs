@@ -31,7 +31,6 @@ public class Movement : MonoBehaviour
     {
         if (col.gameObject.tag == ("Ground"))
         {
-            Debug.Log("Grounded");
             isGrounded = true;
         }
     }
