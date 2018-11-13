@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrollingParallax : MonoBehaviour {
 
-    public bool scrolling,paralax;
+    public bool scrolling, paralax;
 
     public float backgroundSize;
     public float paralaxSpeed;
@@ -15,8 +15,8 @@ public class scrollingParallax : MonoBehaviour {
     private int leftIndex;
     private int rightIndex;
     private float lastCameraX;
-    
-	private void Start ()
+
+    private void Start()
     {
         cameraTransform = Camera.main.transform;
         lastCameraX = cameraTransform.position.x;
@@ -26,7 +26,7 @@ public class scrollingParallax : MonoBehaviour {
 
         leftIndex = 0;
         rightIndex = layers.Length - 1;
-	}
+    }
 
     private void Update()
     {

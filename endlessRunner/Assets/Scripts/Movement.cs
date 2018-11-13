@@ -12,27 +12,26 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetKeyDown("space") && isGrounded == true)
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            gameObject.transform.position += new Vector3(speed, 0, 0);
-        }
+        gameObject.transform.position += new Vector3(speed, 0, 0);
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == ("Ground") && isGrounded == false)
+        if (col.gameObject.tag == ("Ground"))
         {
+            Debug.Log("Grounded");
             isGrounded = true;
         }
     }
