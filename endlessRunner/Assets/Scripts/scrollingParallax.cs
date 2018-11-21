@@ -30,21 +30,24 @@ public class scrollingParallax : MonoBehaviour {
 
     private void Update()
     {
-        if (paralax)
+        if (PauseMenu.GameIsPaused == false)
         {
-            float deltaX = cameraTransform.position.x - lastCameraX;
-            transform.position += Vector3.right * (deltaX * paralaxSpeed);
-        }
+            if (paralax)
+            {
+                float deltaX = cameraTransform.position.x - lastCameraX;
+                transform.position += Vector3.right * (deltaX * paralaxSpeed);
+            }
 
-        lastCameraX = cameraTransform.position.x;
+            lastCameraX = cameraTransform.position.x;
 
-        if (scrolling)
-        {
-            if (cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
-                ScrollLeft();
+            if (scrolling)
+            {
+                if (cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
+                    ScrollLeft();
 
-            if (cameraTransform.position.x > (layers[rightIndex].transform.position.x - viewZone))
-                ScrollRight();
+                if (cameraTransform.position.x > (layers[rightIndex].transform.position.x - viewZone))
+                    ScrollRight();
+            }
         }
     }
 

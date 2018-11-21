@@ -23,8 +23,10 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
         }
-
-        gameObject.transform.position += new Vector3(speed, 0, 0);
+        if (PauseMenu.GameIsPaused == false)
+        {
+            gameObject.transform.position += new Vector3(speed, 0, 0);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
