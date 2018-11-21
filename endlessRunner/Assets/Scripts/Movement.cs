@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float speed = 0.15f;
     public float JumpHeight;
     public bool isGrounded;
+    public static bool isDead;
 
     private Rigidbody2D rb;
 
@@ -14,6 +15,7 @@ public class Movement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
+        isDead = false;
     }
 
     void Update()
@@ -23,7 +25,7 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
         }
-        if (PauseMenu.GameIsPaused == false)
+        if ((PauseMenu.GameIsPaused == false) || (isDead == true))
         {
             gameObject.transform.position += new Vector3(speed, 0, 0);
         }
@@ -34,6 +36,10 @@ public class Movement : MonoBehaviour
         if (col.gameObject.tag == ("Ground"))
         {
             isGrounded = true;
+        }
+        if (col.gameObject.tag == ("Death"))
+        {
+            isDead = true;
         }
     }
 }

@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     
     void LateUpdate()
     {
-        if (PauseMenu.GameIsPaused == false)
+        if ((PauseMenu.GameIsPaused == false) || (Movement.isDead == true))
         {
             transform.position = player.transform.position + offset;
             Vector3 newPosition = player.transform.position + offset;
