@@ -30,7 +30,7 @@ public class scrollingParallax : MonoBehaviour {
 
     private void Update()
     {
-        if (PauseMenu.GameIsPaused == false)
+        if ((PauseMenu.GameIsPaused == false) || (Movement.isDead == true))
         {
             if (paralax)
             {

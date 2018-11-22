@@ -2793,6 +2793,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   JumpHeight: 5
+  startTime: 0
+  currentTime: 0
+  meterLabel: {fileID: 2030459924}
   isGrounded: 0
 --- !u!50 &2007489065
 Rigidbody2D:
