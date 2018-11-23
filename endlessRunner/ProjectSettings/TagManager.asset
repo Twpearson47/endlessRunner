@@ -45,3 +45,6 @@ TagManager:
   - name: Ground
     uniqueID: 2847399989
     locked: 0
+  - name: obsticals
+    uniqueID: 531754841
+    locked: 0

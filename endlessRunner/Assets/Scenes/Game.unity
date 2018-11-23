@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 1
-  paralax: 1
+  paralax: 0
   backgroundSize: -20
   paralaxSpeed: -1
 --- !u!4 &381092844
@@ -2792,7 +2792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  JumpHeight: 5
+  JumpHeight: 7
   isGrounded: 0
 --- !u!50 &2007489065
 Rigidbody2D:
