@@ -15,10 +15,13 @@ public class Movement : MonoBehaviour
     public bool isGrounded;
     public static bool isDead;
 
+    public GameObject rock;
+    private Animator breakableRock;
     private Rigidbody2D rb;
 
     void Start()
     {
+        breakableRock = rock.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         startTime = Time.time;
         isGrounded = true;
@@ -32,13 +35,16 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
         }
-        if ((PauseMenu.GameIsPaused == false) || (isDead == true))
+        if (isDead == false)
         {
-            gameObject.transform.position += new Vector3(speed, 0, 0);
+            if (PauseMenu.GameIsPaused == false)
+            {
+                gameObject.transform.position += new Vector3(speed, 0, 0);
+            }
+            currentTime = Time.time;
+            float meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
+            meterLabel.text = Mathf.RoundToInt(meters).ToString();
         }
-        currentTime = Time.time;
-        float meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
-        meterLabel.text = Mathf.RoundToInt(meters). ToString();
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -49,6 +55,8 @@ public class Movement : MonoBehaviour
         }
         if (col.gameObject.tag == ("Death"))
         {
+            Debug.Log("Dead");
+            breakableRock.SetBool("Destroy", true);
             isDead = true;
         }
     }
