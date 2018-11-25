@@ -8,12 +8,14 @@ public class Movement : MonoBehaviour
     public float JumpHeight;
     public bool isGrounded;
 
+
     private Rigidbody2D rb;
 
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = true;
+
     }
 
     void Update()
@@ -22,7 +24,10 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+
+
         }
+
 
         gameObject.transform.position += new Vector3(speed, 0, 0);
     }
@@ -33,5 +38,7 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+
+        
     }
 }
