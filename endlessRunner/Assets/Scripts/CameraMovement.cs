@@ -13,9 +13,15 @@ public class CameraMovement : MonoBehaviour
     
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
-        Vector3 newPosition = player.transform.position + offset;
-        newPosition.y = 0;
-        transform.position = newPosition;
+        if (Movement.isDead == false)
+        {
+            if (PauseMenu.GameIsPaused == false)
+            {
+                transform.position = player.transform.position + offset;
+                Vector3 newPosition = player.transform.position + offset;
+                newPosition.y = 0;
+                transform.position = newPosition;
+            }
+        }
     }
 }
