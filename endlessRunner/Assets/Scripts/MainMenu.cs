@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class MainMenu : MonoBehaviour
 {
     public bool textState;
@@ -8,10 +10,15 @@ public class MainMenu : MonoBehaviour
     public Transform sideTab;
     public bool posX;
 
+    public Button tab;
+    public Sprite button01;
+    public Sprite button02;
+
     void Start()
     {
         textState = true;
         posX = false;
+        tab.GetComponent<Image>().sprite = button01;
     }
 
     void Update()
@@ -32,12 +39,14 @@ public class MainMenu : MonoBehaviour
         {
             sideTab.position = new Vector3(165, 560, 0);
             Time.timeScale = 0;
+            tab.GetComponent<Image>().sprite = button02;
             posX = true;
         }
         else
         {
             sideTab.position = new Vector3(960, 560, 0);
             Time.timeScale = 1;
+            tab.GetComponent<Image>().sprite = button01;
             posX = false;
         }
     }
@@ -52,5 +61,11 @@ public class MainMenu : MonoBehaviour
     {
         menuText.enabled = true;
         textState = true;
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
     }
 }

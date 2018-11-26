@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 1
-  paralax: 0
+  paralax: 1
   backgroundSize: -20
   paralaxSpeed: -1
 --- !u!4 &381092844
@@ -2122,6 +2122,10 @@ Prefab:
     - target: {fileID: 1234287136067162, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_TagString
       value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234287136067162, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
+      propertyPath: m_Name
+      value: Rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
