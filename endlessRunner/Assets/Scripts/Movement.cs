@@ -37,6 +37,8 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+
+
         }
         if (isDead == false)
         {
