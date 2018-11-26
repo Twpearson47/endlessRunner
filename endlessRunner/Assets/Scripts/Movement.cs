@@ -16,6 +16,12 @@ public class Movement : MonoBehaviour
 
     public bool isGrounded;
     public static bool isDead;
+    public bool isSliding;
+
+    public AudioClip VaseHit;
+    public AudioClip JumpGrunt;
+    public AudioClip ObstacleHit;
+    public AudioSource Sound;
 
     public GameObject rock;
     private Animator breakableRock;
@@ -29,6 +35,7 @@ public class Movement : MonoBehaviour
         startTime = Time.time;
         isGrounded = true;
         isDead = false;
+        isSliding = false;
     }
 
     void Update()
@@ -37,8 +44,11 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
-
-
+            Sound.PlayOneShot(JumpGrunt);
+        }
+        if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
+        {
+            isSliding = true;
         }
         if (isDead == false)
         {
@@ -63,6 +73,7 @@ public class Movement : MonoBehaviour
             Debug.Log("Dead");
             breakableRock.SetBool("Destroy", true);
             isDead = true;
+            Sound.PlayOneShot(ObstacleHit);
             hasDied();
         }
     }

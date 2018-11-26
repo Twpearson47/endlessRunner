@@ -4,9 +4,14 @@ public class MainMenu : MonoBehaviour
 {
     public bool textState;
     public Image menuText;
+
+    public Transform sideTab;
+    public bool posX;
+
     void Start()
     {
         textState = true;
+        posX = false;
     }
 
     void Update()
@@ -18,6 +23,22 @@ public class MainMenu : MonoBehaviour
         if (textState == false)
         {
             Invoke("EnableText", 0.55f);
+        }
+    }
+
+    public void Extra()
+    {
+        if (posX == false)
+        {
+            sideTab.position = new Vector3(165, 560, 0);
+            Time.timeScale = 0;
+            posX = true;
+        }
+        else
+        {
+            sideTab.position = new Vector3(960, 560, 0);
+            Time.timeScale = 1;
+            posX = false;
         }
     }
 
