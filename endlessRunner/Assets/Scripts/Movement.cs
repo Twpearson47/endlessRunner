@@ -9,8 +9,10 @@ public class Movement : MonoBehaviour
     public float JumpHeight;
     public float startTime;
     public float currentTime;
+    public float meters;
 
     public Text meterLabel;
+    public Text bestLabel;
 
     public bool isGrounded;
     public static bool isDead;
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
     {
         breakableRock = rock.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        bestLabel.text = PlayerPrefs.GetInt("HighScore", 0).ToString("0000");
         startTime = Time.time;
         isGrounded = true;
         isDead = false;
@@ -42,8 +45,8 @@ public class Movement : MonoBehaviour
                 gameObject.transform.position += new Vector3(speed, 0, 0);
             }
             currentTime = Time.time;
-            float meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
-            meterLabel.text = Mathf.RoundToInt(meters).ToString();
+            meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
+            meterLabel.text = Mathf.RoundToInt(meters).ToString("0000");
         }
     }
 
@@ -58,6 +61,16 @@ public class Movement : MonoBehaviour
             Debug.Log("Dead");
             breakableRock.SetBool("Destroy", true);
             isDead = true;
+            hasDied();
+        }
+    }
+
+    public void hasDied()
+    {
+        if (Mathf.RoundToInt(meters) > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
+            bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
         }
     }
 }
