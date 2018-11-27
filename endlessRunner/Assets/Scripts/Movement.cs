@@ -78,6 +78,20 @@ public class Movement : MonoBehaviour
         }
     }
 
+    void CollectCoin(Collider2D coinCollider)
+    {
+        ScoreManager.scarabCount++;
+        Destroy(coinCollider.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("Scarab"))
+        {
+            CollectCoin(collision);
+        }
+    }
+
     public void hasDied()
     {
         if (Mathf.RoundToInt(meters) > PlayerPrefs.GetInt("HighScore", 0))

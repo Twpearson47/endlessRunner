@@ -16,6 +16,9 @@ public class scrollingParallax : MonoBehaviour {
     private int rightIndex;
     private float lastCameraX;
 
+    private CoinGenerator theCoinGenerator;
+    public float randomCoin;
+
     private void Start()
     {
         cameraTransform = Camera.main.transform;
@@ -26,6 +29,7 @@ public class scrollingParallax : MonoBehaviour {
 
         leftIndex = 0;
         rightIndex = layers.Length - 1;
+        theCoinGenerator = FindObjectOfType<CoinGenerator>();
     }
 
     private void Update()
@@ -65,6 +69,10 @@ public class scrollingParallax : MonoBehaviour {
 
     private void ScrollRight()
     {
+        if (Random.Range(0f, 100f) < randomCoin)
+        {
+            theCoinGenerator.SpawnCoins(new Vector3(transform.position.x * -3f, transform.position.y, transform.position.z));
+        }
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
         rightIndex = leftIndex;
         leftIndex++;

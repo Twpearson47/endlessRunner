@@ -5,18 +5,10 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour {
 
     public Text scarabText;
-    public float scarabCount;
-    private ScoreManager theScoreManager;
-
-
-	void Start () {
-
-        theScoreManager = FindObjectOfType<ScoreManager>();
-
-	}
-
-	void Update () {
-
+    public static float scarabCount;
+    
+	void Update ()
+    {
         scarabText.text = scarabCount.ToString("000");
 	}
 }
