@@ -5,24 +5,12 @@ using UnityEngine.UI;
 
 public class BackgroundSpriteSwap : MonoBehaviour
 {
-//   public List<3> spriteSwapList;
-//    public Sprite spriteBlock1;
-//    public Sprite spriteBlock2;
-//    public Sprite spriteBlock3;
-
-//    public Sprite spriteMummy1;
-//    public Sprite spriteMummy2;
-//    public Sprite spriteMummy3;
-
 
     public Sprite[] blockSprites;
     public Sprite[] mummySprites;
     public Sprite[] goddessSprites;
 
     private SpriteRenderer spriteRendererPanel1;
-  //  private SpriteRenderer spriteRendererBlock2;
-  //  private SpriteRenderer spriteRendererBlock3;
-
 
     void Start()
     {
@@ -33,18 +21,22 @@ public class BackgroundSpriteSwap : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the E key is pushed down
+        if (Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the Player is moving, change the backgrounds
+        {
+            
+            if (Input.GetKeyDown(KeyCode.E)) // If the E key is pushed down
 //        if (meters>=3) // when the player gets the distance to change the scenery
-        {
-            ChangeTheBlockSprite(); // call method to change block sprites
-        }
-        if (Input.GetKeyDown(KeyCode.R) && Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the E key is pushed down
-        {
-            ChangeTheMummySprite(); // call method to change the mummy sprites
-        }
-        if (Input.GetKeyDown(KeyCode.T) && Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the E key is pushed down
-        {
-            ChangeTheGoddessSprite(); // call method to change the goddess sprites
+            {
+                ChangeTheBlockSprite(); // call method to change block sprites
+            }
+            if (Input.GetKeyDown(KeyCode.R)) // If the E key is pushed down
+            {
+                ChangeTheMummySprite(); // call method to change the mummy sprites
+            }
+            if (Input.GetKeyDown(KeyCode.T)) // If the E key is pushed down
+            {
+                ChangeTheGoddessSprite(); // call method to change the goddess sprites
+            }
         }
 
     }
@@ -63,8 +55,7 @@ public class BackgroundSpriteSwap : MonoBehaviour
 
     public void ChangeTheGoddessSprite()
     {
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = Random.Range(0, 4);
         spriteRendererPanel1.sprite = goddessSprites[randomIndex];
     }
-
 }

@@ -1081,7 +1081,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fd9660a497680564fb088c984af17067, type: 3}
   - {fileID: 21300000, guid: 5f1eac8f47d413244b44f7253f920549, type: 3}
   - {fileID: 21300000, guid: 935cafe74435ae640afb8e0d693ae9f2, type: 3}
-  goddessSprites: []
+  goddessSprites:
+  - {fileID: 21300000, guid: 833f74821501806449664e206690724b, type: 3}
+  - {fileID: 21300000, guid: c7d2397ab5703924dbd9975b18dc536e, type: 3}
+  - {fileID: 21300000, guid: a9003341f6a8b2d47a04fa20350b5583, type: 3}
+  - {fileID: 21300000, guid: 3234a6b27f89cf4429edfdb685b2b6c2, type: 3}
 --- !u!1 &1013335920
 GameObject:
   m_ObjectHideFlags: 0
