@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     public float JumpHeight;
     public float startTime;
     public float currentTime;
-    public float meters;
+    public static float meters;
 
     public Text meterLabel;
     public Text bestLabel;
