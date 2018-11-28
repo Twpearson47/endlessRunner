@@ -668,54 +668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2007489061}
---- !u!1 &381092842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 381092844}
-  - component: {fileID: 381092843}
-  m_Layer: 0
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &381092843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381092842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9be9eea484f1154296cf7530fee23bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrolling: 1
-  paralax: 1
-  backgroundSize: -20
-  paralaxSpeed: -1
-  randomCoin: 40
---- !u!4 &381092844
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 381092842}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
-  m_Children:
-  - {fileID: 1769804112}
-  - {fileID: 515694313}
-  - {fileID: 1891459167}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &448932629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1422298898344734, guid: e29ee31bed9308a42b328d48bd1d69ed,
     type: 2}
-  pooledAmount: 3
 --- !u!4 &725471202
 Transform:
   m_ObjectHideFlags: 0
@@ -1130,7 +1081,7 @@ Transform:
   m_LocalScale: {x: 0.2500447, y: 0.2500447, z: 0.2500447}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878450376
 GameObject:
@@ -1343,7 +1294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1447567307
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db77e262fb00d6249b46484c8e986371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1823,7 +1774,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1447567307
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db77e262fb00d6249b46484c8e986371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2135,7 +2086,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4860038629311462, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4860038629311462, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_LocalScale.x
@@ -2527,7 +2478,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1447567307
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: db77e262fb00d6249b46484c8e986371, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2744,6 +2695,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoin
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1447567307
+      objectReference: {fileID: 0}
+    - target: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212854132297283952, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1447567307
+      objectReference: {fileID: 0}
+    - target: {fileID: 212854132297283952, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212955879712182592, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1447567307
+      objectReference: {fileID: 0}
+    - target: {fileID: 212955879712182592, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: spawningCoins
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
@@ -2841,7 +2832,6 @@ MonoBehaviour:
   JumpHeight: 7
   startTime: 0
   currentTime: 0
-  meters: 0
   meterLabel: {fileID: 2030459924}
   bestLabel: {fileID: 1013335922}
   isGrounded: 0
@@ -3129,6 +3119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   paralax: 0
+  spawningCoins: 0
   backgroundSize: -20
   paralaxSpeed: -1
   randomCoin: 40
