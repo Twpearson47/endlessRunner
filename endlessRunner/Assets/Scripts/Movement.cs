@@ -24,11 +24,13 @@ public class Movement : MonoBehaviour
     public AudioSource Sound;
 
     public GameObject rock;
+    private Animator movingPlayer;
     private Animator breakableRock;
     private Rigidbody2D rb;
 
     void Start()
     {
+        movingPlayer = GetComponent<Animator>();
         breakableRock = rock.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         bestLabel.text = PlayerPrefs.GetInt("HighScore", 0).ToString("0000");
@@ -45,10 +47,21 @@ public class Movement : MonoBehaviour
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
             Sound.PlayOneShot(JumpGrunt);
+            movingPlayer.SetBool("IsJumping", true);
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            movingPlayer.SetBool("IsJumping", false);
         }
         if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
         {
             isSliding = true;
+            movingPlayer.SetBool("IsSliding", true);
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            isSliding = false;
+            movingPlayer.SetBool("IsSliding", false);
         }
         if (isDead == false)
         {

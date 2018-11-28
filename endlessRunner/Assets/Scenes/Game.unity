@@ -3118,7 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 1
-  paralax: 0
+  paralax: 1
   spawningCoins: 0
   backgroundSize: -20
   paralaxSpeed: -1
