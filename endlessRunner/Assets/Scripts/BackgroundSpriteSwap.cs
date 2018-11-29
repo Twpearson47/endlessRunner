@@ -6,56 +6,65 @@ using UnityEngine.UI;
 public class BackgroundSpriteSwap : MonoBehaviour
 {
 
-    public Sprite[] blockSprites;
-    public Sprite[] mummySprites;
-    public Sprite[] goddessSprites;
-
-    private SpriteRenderer spriteRendererPanel1;
+    public Sprite[] blockSprites; //there are currently three different block patterns
+    public Sprite[] mummySprites; //there are three different mummy patterns
+    public Sprite[] goddessSprites; //there are four different goddess patterns
+    public SpriteRenderer[] panels; //the three panels
+    public int switchCount;    //the number of panels before the scenery changes (from blocks to mummies to goddesses)
+    private int counter;       // the number of times the sprites change 
+    private int panelIndex;      //the index of the panel to switch (should always be the panel currently behind the player)
 
     void Start()
     {
-        spriteRendererPanel1 = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject 1
-        if (spriteRendererPanel1.sprite == null) // if the sprite on spriteRenderer is null then
-            spriteRendererPanel1.sprite = blockSprites[0]; // set the sprite to the first Block sprite spriteBlock1
+        panels = GetComponentsInChildren<SpriteRenderer>();
+        counter = 0;
+        panelIndex = 0;
     }
 
-    void Update()
+    public void ChangeBackgroundSprite()
     {
-        if (Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the Player is moving, change the backgrounds
+        if (counter <= switchCount)    //                if (counter < 3)// when the counter gets to 0, 1 2 etc up to switchCount change the Blocks scenery
         {
-            
-            if (Input.GetKeyDown(KeyCode.E)) // If the E key is pushed down
-//        if (meters>=3) // when the player gets the distance to change the scenery
+            int randomIndex = Random.Range(0, blockSprites.Length);
+            Debug.Log("Blocks: counter, panelIndex, blocksprites.length, randomIndex " + counter + panelIndex + blockSprites.Length + randomIndex);
+            panels[panelIndex].sprite = blockSprites[randomIndex];
+            panelIndex++;
+            while (panelIndex >= panels.Length)
             {
-                ChangeTheBlockSprite(); // call method to change block sprites
+                panelIndex = panelIndex - (panels.Length);
             }
-            if (Input.GetKeyDown(KeyCode.R)) // If the E key is pushed down
-            {
-                ChangeTheMummySprite(); // call method to change the mummy sprites
-            }
-            if (Input.GetKeyDown(KeyCode.T)) // If the E key is pushed down
-            {
-                ChangeTheGoddessSprite(); // call method to change the goddess sprites
-            }
+            counter++;
         }
 
+        if (counter > switchCount && counter <= switchCount * 2) // when the counter is (switchCount to switchCount*2 -1) (3,4 or 5) change the mummy sprite
+        {
+            int randomIndex = Random.Range(0, mummySprites.Length);
+            Debug.Log("Mummy: counter, panelIndex, mummySprites.Length, randomIndex " + counter + panelIndex + mummySprites.Length + randomIndex);
+            panels[panelIndex].sprite = mummySprites[randomIndex];
+            panelIndex++;
+            while (panelIndex >= panels.Length)
+            {
+                panelIndex = panelIndex - (panels.Length);
+            }
+            counter++;
+        }
+
+        if (counter > (switchCount * 2) && counter <= switchCount * 3) // when the counter is  \(switchCount*2 to switchCount*3 -1) 6,7,8 change the goddess sprite
+        {
+            int randomIndex = Random.Range(0, goddessSprites.Length);
+                   Debug.Log("Goddess: counter, panelIndex, goddessSprites.Length, randomIndex " + counter + panelIndex + goddessSprites.Length + randomIndex);
+            panels[panelIndex].sprite = goddessSprites[randomIndex];
+            panelIndex++;
+            while (panelIndex >= panels.Length)
+            {
+                panelIndex = panelIndex - (panels.Length);
+            }
+            counter++;
+        }
+        if (counter > switchCount * 3)
+        {
+            counter = 0;
+        }
     }
 
-    public void ChangeTheBlockSprite()
-    {
-        int randomIndex = Random.Range(0, 3);
-        spriteRendererPanel1.sprite = blockSprites[randomIndex];
-    }
-
-    public void ChangeTheMummySprite()
-    {
-        int randomIndex = Random.Range(0, 3);
-        spriteRendererPanel1.sprite = mummySprites[randomIndex];
-    }
-
-    public void ChangeTheGoddessSprite()
-    {
-        int randomIndex = Random.Range(0, 4);
-        spriteRendererPanel1.sprite = goddessSprites[randomIndex];
-    }
 }

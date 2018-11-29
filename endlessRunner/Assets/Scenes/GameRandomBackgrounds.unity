@@ -547,7 +547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scarabText: {fileID: 1333498390}
-  scarabCount: 0
 --- !u!4 &324772747
 Transform:
   m_ObjectHideFlags: 0
@@ -717,6 +716,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &464303666 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212955879712182592, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
 --- !u!1 &471374913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,7 +1072,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 990632447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c00fffe4459367347873e09ed8d4e62b, type: 3}
   m_Name: 
@@ -1086,6 +1090,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c7d2397ab5703924dbd9975b18dc536e, type: 3}
   - {fileID: 21300000, guid: a9003341f6a8b2d47a04fa20350b5583, type: 3}
   - {fileID: 21300000, guid: 3234a6b27f89cf4429edfdb685b2b6c2, type: 3}
+  panels: []
+  switchCount: 0
+--- !u!212 &990632450 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212854132297283952, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
 --- !u!1 &1013335920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1923,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580004762}
+--- !u!212 &1584583587 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
 --- !u!1 &1593208651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,9 +2639,85 @@ Prefab:
       propertyPath: m_Name
       value: Panel 3
       objectReference: {fileID: 0}
+    - target: {fileID: 212854132297283952, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212955879712182592, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: backGrounds
+      value: 
+      objectReference: {fileID: 1990327930}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: spawningCoins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606739911195742, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393884887081960, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918127219208826, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoin
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1990327929 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1044374073504818, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
+--- !u!114 &1990327930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990327929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00fffe4459367347873e09ed8d4e62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockSprites:
+  - {fileID: 21300000, guid: e43ade29de347bb4f900a67096e1144a, type: 3}
+  - {fileID: 21300000, guid: 8e8e7ec6997898345be266fdda99cc5d, type: 3}
+  - {fileID: 21300000, guid: 4f4d9b710889e314fbb00ec7e1cdebcb, type: 3}
+  mummySprites:
+  - {fileID: 21300000, guid: fd9660a497680564fb088c984af17067, type: 3}
+  - {fileID: 21300000, guid: 5f1eac8f47d413244b44f7253f920549, type: 3}
+  - {fileID: 21300000, guid: 935cafe74435ae640afb8e0d693ae9f2, type: 3}
+  goddessSprites:
+  - {fileID: 21300000, guid: 833f74821501806449664e206690724b, type: 3}
+  - {fileID: 21300000, guid: c7d2397ab5703924dbd9975b18dc536e, type: 3}
+  - {fileID: 21300000, guid: a9003341f6a8b2d47a04fa20350b5583, type: 3}
+  - {fileID: 21300000, guid: 3234a6b27f89cf4429edfdb685b2b6c2, type: 3}
+  panels:
+  - {fileID: 990632450}
+  - {fileID: 1584583587}
+  - {fileID: 464303666}
+  switchCount: 6
 --- !u!1 &2007489061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,7 +2811,6 @@ MonoBehaviour:
   JumpHeight: 7
   startTime: 0
   currentTime: 0
-  meters: 0
   meterLabel: {fileID: 2030459924}
   bestLabel: {fileID: 1013335922}
   isGrounded: 0
@@ -2989,8 +3080,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   paralax: 0
+  spawningCoins: 0
+  backGrounds: {fileID: 1990327930}
   backgroundSize: -20
   paralaxSpeed: -1
+  randomCoin: 0
 --- !u!1 &2076846702
 GameObject:
   m_ObjectHideFlags: 0
