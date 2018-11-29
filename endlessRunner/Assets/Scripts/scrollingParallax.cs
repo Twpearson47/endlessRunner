@@ -71,7 +71,7 @@ public class scrollingParallax : MonoBehaviour {
     {
         if ((Random.Range(0f, 100f) < randomCoin) && spawningCoins == true)
         {
-            theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y, transform.position.z));
+            theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
         }
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
         rightIndex = leftIndex;
