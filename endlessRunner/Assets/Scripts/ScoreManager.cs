@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour {
     
 	void Update ()
     {
-        scarabText.text = scarabCount.ToString("000");
+        if (Movement.isDead == false)
+        {
+            scarabText.text = scarabCount.ToString("000");
+        }
 	}
 }

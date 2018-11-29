@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrollingParallax : MonoBehaviour {
 
-    public bool scrolling, paralax, spawningCoins;
+    public bool scrolling, paralax, spawningCoins, spawningObstacles;
 
     public float backgroundSize;
     public float paralaxSpeed;
@@ -18,6 +18,8 @@ public class scrollingParallax : MonoBehaviour {
 
     private CoinGenerator theCoinGenerator;
     public float randomCoin;
+    public float randomRock;
+    public float randomCrate;
 
     private void Start()
     {
@@ -72,6 +74,14 @@ public class scrollingParallax : MonoBehaviour {
         if ((Random.Range(0f, 100f) < randomCoin) && spawningCoins == true)
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
+        }
+        if ((Random.Range(0f, 100f) < randomRock) && spawningObstacles == true)
+        {
+            theCoinGenerator.SpawnRock(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.7f, transform.position.z));
+        }
+        if ((Random.Range(0f, 100f) < randomCrate) && spawningObstacles == true)
+        {
+            theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.15f, transform.position.z));
         }
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
         rightIndex = leftIndex;
