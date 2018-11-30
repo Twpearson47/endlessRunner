@@ -23,15 +23,12 @@ public class Movement : MonoBehaviour
     public AudioClip ObstacleHit;
     public AudioSource Sound;
 
-    public GameObject rock;
     private Animator movingPlayer;
-    private Animator breakableRock;
     private Rigidbody2D rb;
 
     void Start()
     {
         movingPlayer = GetComponent<Animator>();
-        breakableRock = rock.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         bestLabel.text = PlayerPrefs.GetInt("HighScore", 0).ToString("0000");
         startTime = Time.time;
@@ -84,7 +81,6 @@ public class Movement : MonoBehaviour
         if (col.gameObject.tag == ("Death"))
         {
             Debug.Log("Dead");
-            breakableRock.SetBool("Destroy", true);
             isDead = true;
             Sound.PlayOneShot(ObstacleHit);
             hasDied();

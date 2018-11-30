@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Game");
         GameIsPaused = false;
+        ScoreManager.scarabCount = 0;
     }
     public void QuitGame()
     {

@@ -16,5 +16,9 @@ public class ObjectDestroyer : MonoBehaviour {
         {
             ObjectDestroy(collision);
         }
+        if (collision.gameObject.tag == ("Death"))
+        {
+            ObjectDestroy(collision);
+        }
     }
 }

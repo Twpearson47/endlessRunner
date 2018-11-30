@@ -6,6 +6,7 @@ public class ObjectPooler : MonoBehaviour {
 
     public GameObject pooledObject;
     public static int pooledAmount = 6;
+    public static int pooledAmount02 = 3;
     List<GameObject> pooledObjects;
 
 	void Start ()
