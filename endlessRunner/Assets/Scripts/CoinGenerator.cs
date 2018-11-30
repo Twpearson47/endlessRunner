@@ -7,13 +7,8 @@ public class CoinGenerator : MonoBehaviour {
     public ObjectPooler coinPool;
     public ObjectPooler rockPool;
     public ObjectPooler cratePool;
+    public ObjectPooler coffinPool;
     public float distanceCoins;
-    public bool obstacleSpawning;
-
-    void Start()
-    {
-        obstacleSpawning = false;    
-    }
 
     public void SpawnCoins(Vector3 startPosition)
     {
@@ -37,36 +32,37 @@ public class CoinGenerator : MonoBehaviour {
 
     public void SpawnRock(Vector3 startPosition02)
     {
-        if (Mathf.RoundToInt(Movement.meters) >= 150)
+        if (rockPool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            if (rockPool.transform.childCount < ObjectPooler.pooledAmount02)
-            {
-                Debug.Log(startPosition02);
+            Debug.Log(startPosition02);
 
-                GameObject rock1 = rockPool.GetPooledObject();
-                rock1.transform.position = startPosition02;
-                rock1.SetActive(true);
-                obstacleSpawning = true;
-            }
+            GameObject rock1 = rockPool.GetPooledObject();
+            rock1.transform.position = startPosition02;
+            rock1.SetActive(true);
         }
     }
 
     public void SpawnCrate(Vector3 startPosition02)
     {
-        if ((Mathf.RoundToInt(Movement.meters) >= 250) && obstacleSpawning == false)
+        if (cratePool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            if (cratePool.transform.childCount < ObjectPooler.pooledAmount02)
-            {
-                Debug.Log(startPosition02);
+            Debug.Log(startPosition02);
 
-                GameObject crate1 = cratePool.GetPooledObject();
-                crate1.transform.position = startPosition02;
-                crate1.SetActive(true);
-            }
+            GameObject crate1 = cratePool.GetPooledObject();
+            crate1.transform.position = startPosition02;
+            crate1.SetActive(true);
         }
-        else
+    }
+
+    public void SpawnCoffin(Vector3 startPosition02)
+    {
+        if (coffinPool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            obstacleSpawning = false;
+            Debug.Log(startPosition02);
+
+            GameObject coffin1 = coffinPool.GetPooledObject();
+            coffin1.transform.position = startPosition02;
+            coffin1.SetActive(true);
         }
     }
 }

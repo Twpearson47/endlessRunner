@@ -1292,6 +1292,7 @@ MonoBehaviour:
   coinPool: {fileID: 725471201}
   rockPool: {fileID: 863946464}
   cratePool: {fileID: 138003288}
+  coffinPool: {fileID: 2106327497}
   distanceCoins: 2
 --- !u!4 &928758698
 Transform:
@@ -1306,6 +1307,7 @@ Transform:
   - {fileID: 725471202}
   - {fileID: 863946465}
   - {fileID: 138003289}
+  - {fileID: 2106327496}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2904,6 +2906,11 @@ Prefab:
       propertyPath: randomCrate
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoffin
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
@@ -3295,6 +3302,7 @@ MonoBehaviour:
   randomCoin: 0
   randomRock: 0
   randomCrate: 0
+  randomCoffin: 0
 --- !u!1 &2076846702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,6 +3378,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2076846702}
+--- !u!1 &2106327495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2106327496}
+  - component: {fileID: 2106327497}
+  m_Layer: 0
+  m_Name: CoffinPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106327496
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106327495}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2106327497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106327495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1988254731972446, guid: 97280fc0b4564954da7192e350712594,
+    type: 2}
 --- !u!1 &2110353368
 GameObject:
   m_ObjectHideFlags: 0

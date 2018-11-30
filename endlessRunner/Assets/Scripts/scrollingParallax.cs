@@ -20,6 +20,7 @@ public class scrollingParallax : MonoBehaviour {
     public float randomCoin;
     public float randomRock;
     public float randomCrate;
+    public float randomCoffin;
 
     private void Start()
     {
@@ -28,7 +29,6 @@ public class scrollingParallax : MonoBehaviour {
         layers = new Transform[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
             layers[i] = transform.GetChild(i);
-
         leftIndex = 0;
         rightIndex = layers.Length - 1;
         theCoinGenerator = FindObjectOfType<CoinGenerator>();
@@ -58,6 +58,22 @@ public class scrollingParallax : MonoBehaviour {
                 }
             }
         }
+
+        if (Mathf.RoundToInt(Movement.meters) >= 150)
+        {
+            randomRock = 30;
+            if (Mathf.RoundToInt(Movement.meters) >= 250)
+            {
+                randomRock = 20;
+                randomCrate = 50;
+                if (Mathf.RoundToInt(Movement.meters) >= 600)
+                {
+                    randomRock = 10;
+                    randomCrate = 50;
+                    randomCoffin = 70;
+                }
+            }
+        }
     }
 
     private void ScrollLeft()
@@ -71,18 +87,36 @@ public class scrollingParallax : MonoBehaviour {
 
     private void ScrollRight()
     {
+        float randomGeneration = Random.Range(0f, 100f);
         if ((Random.Range(0f, 100f) < randomCoin) && spawningCoins == true)
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
         }
-        if ((Random.Range(0f, 100f) < randomRock) && spawningObstacles == true)
+
+        if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
-            theCoinGenerator.SpawnRock(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.7f, transform.position.z));
+            if ((randomGeneration < randomRock) && spawningObstacles == true)
+            {
+                theCoinGenerator.SpawnRock(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.7f, transform.position.z));
+            }
+
+            if (Mathf.RoundToInt(Movement.meters) >= 250)
+            {
+                if ((randomGeneration > randomRock) && (randomGeneration < randomCrate) && spawningObstacles == true)
+                {
+                    theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.4f, transform.position.z));
+                }
+
+                if (Mathf.RoundToInt(Movement.meters) >= 600)
+                {
+                    if ((randomGeneration > randomCrate) && (randomGeneration < randomCoffin) && spawningObstacles == true)
+                    {
+                        theCoinGenerator.SpawnCoffin(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                    }
+                }
+            }
         }
-        if ((Random.Range(0f, 100f) < randomCrate) && spawningObstacles == true)
-        {
-            theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.15f, transform.position.z));
-        }
+
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
         rightIndex = leftIndex;
         leftIndex++;
