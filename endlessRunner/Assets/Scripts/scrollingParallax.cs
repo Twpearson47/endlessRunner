@@ -21,6 +21,8 @@ public class scrollingParallax : MonoBehaviour {
     public float randomRock;
     public float randomCrate;
     public float randomCoffin;
+    public float randomUrn;
+    public int spawningUrns;
 
     private void Start()
     {
@@ -66,11 +68,15 @@ public class scrollingParallax : MonoBehaviour {
             {
                 randomRock = 20;
                 randomCrate = 50;
+                randomUrn = 100;
+                spawningUrns = 1;
                 if (Mathf.RoundToInt(Movement.meters) >= 600)
                 {
                     randomRock = 10;
                     randomCrate = 50;
                     randomCoffin = 70;
+                    randomUrn = 100;
+                    spawningUrns = 2;
                 }
             }
         }
@@ -92,6 +98,10 @@ public class scrollingParallax : MonoBehaviour {
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
         }
+        if ((Random.Range(0f, 100f) < randomCoin) && spawningObstacles == true && spawningUrns == 1)
+        {
+            theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.3f, transform.position.z));
+        }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
@@ -106,12 +116,20 @@ public class scrollingParallax : MonoBehaviour {
                 {
                     theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.4f, transform.position.z));
                 }
+                if ((randomGeneration > randomCrate) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 1)
+                {
+                    theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                }
 
                 if (Mathf.RoundToInt(Movement.meters) >= 600)
                 {
                     if ((randomGeneration > randomCrate) && (randomGeneration < randomCoffin) && spawningObstacles == true)
                     {
                         theCoinGenerator.SpawnCoffin(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                    }
+                    if ((randomGeneration > randomCoffin) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 2)
+                    {
+                        theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
                     }
                 }
             }

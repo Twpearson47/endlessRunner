@@ -8,6 +8,7 @@ public class CoinGenerator : MonoBehaviour {
     public ObjectPooler rockPool;
     public ObjectPooler cratePool;
     public ObjectPooler coffinPool;
+    public ObjectPooler urnPool;
     public float distanceCoins;
 
     public void SpawnCoins(Vector3 startPosition)
@@ -63,6 +64,18 @@ public class CoinGenerator : MonoBehaviour {
             GameObject coffin1 = coffinPool.GetPooledObject();
             coffin1.transform.position = startPosition02;
             coffin1.SetActive(true);
+        }
+    }
+
+    public void SpawnUrn(Vector3 startPosition02)
+    {
+        if (urnPool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject urn1 = urnPool.GetPooledObject();
+            urn1.transform.position = startPosition02;
+            urn1.SetActive(true);
         }
     }
 }

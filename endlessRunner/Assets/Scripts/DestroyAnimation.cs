@@ -18,4 +18,12 @@ public class DestroyAnimation : MonoBehaviour {
             breakableRock.SetBool("Destroy", true);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == ("Player"))
+        {
+            breakableRock.SetBool("Destroy", true);
+        }
+    }
 }

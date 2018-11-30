@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Death
   - Scarab
+  - Urn
   layers:
   - Default
   - TransparentFX
