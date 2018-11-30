@@ -143,8 +143,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolling: 1
   paralax: 1
+  spawningCoins: 1
+  spawningObstacles: 1
   backgroundSize: -20
   paralaxSpeed: -1
+  randomCoin: 40
+  randomRock: 60
+  randomCrate: 40
+  randomCoffin: 70
 --- !u!212 &212485012125337984
 SpriteRenderer:
   m_ObjectHideFlags: 1
