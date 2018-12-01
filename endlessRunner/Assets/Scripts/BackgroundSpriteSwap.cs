@@ -6,56 +6,57 @@ using UnityEngine.UI;
 public class BackgroundSpriteSwap : MonoBehaviour
 {
 
-    public Sprite[] blockSprites;
-    public Sprite[] mummySprites;
-    public Sprite[] goddessSprites;
-
-    private SpriteRenderer spriteRendererPanel1;
+    public Sprite[] blockSprites; //the three different block patterns
+    public Sprite[] mummySprites; //the three different mummy patterns
+    public Sprite[] goddessSprites; //the four different goddess patterns
+    public SpriteRenderer[] panels; //the panels of the walls
+    public int switchCount;    //the number of panels before the scenery changes level (from blocks to mummies to goddesses)
+    private int counter;       // the number of times the sprites change 
+    private float levelf;
+    private int level;   // the level 
 
     void Start()
     {
-        spriteRendererPanel1 = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject 1
-        if (spriteRendererPanel1.sprite == null) // if the sprite on spriteRenderer is null then
-            spriteRendererPanel1.sprite = blockSprites[0]; // set the sprite to the first Block sprite spriteBlock1
+        panels = GetComponentsInChildren<SpriteRenderer>();
+        counter = 0;
+        levelf = 0.0f;
+        level = 0;
+        if (switchCount <= 0)
+        {
+            Debug.Log("SwitchCount must be a positive, non-zero integer - this code will now set it to 1");
+            switchCount = 1;
+        }
     }
 
-    void Update()
+    public void ChangeBackgroundSprite(int leftIndex)
     {
-        if (Movement.isDead == false && PauseMenu.GameIsPaused == false) // If the Player is moving, change the backgrounds
+        levelf = (counter / switchCount);
+        level = (int)levelf;
+
+        if (level == 0)    //level 0 use block sprite
         {
-            
-            if (Input.GetKeyDown(KeyCode.E)) // If the E key is pushed down
-//        if (meters>=3) // when the player gets the distance to change the scenery
-            {
-                ChangeTheBlockSprite(); // call method to change block sprites
-            }
-            if (Input.GetKeyDown(KeyCode.R)) // If the E key is pushed down
-            {
-                ChangeTheMummySprite(); // call method to change the mummy sprites
-            }
-            if (Input.GetKeyDown(KeyCode.T)) // If the E key is pushed down
-            {
-                ChangeTheGoddessSprite(); // call method to change the goddess sprites
-            }
+            int randomIndex = Random.Range(0, blockSprites.Length);
+            panels[leftIndex].sprite = blockSprites[randomIndex];
         }
 
+        if (level == 1) // level 1 use the mummy sprite
+        {
+            int randomIndex = Random.Range(0, mummySprites.Length);
+            panels[leftIndex].sprite = mummySprites[randomIndex];
+        }
+
+        if (level == 2) // level 2 use goddess sprite
+        {
+            int randomIndex = Random.Range(0, goddessSprites.Length);
+            panels[leftIndex].sprite = goddessSprites[randomIndex];
+        }
+
+        if (level >= 3) // level 3 go back to level 0
+        {
+            counter = 0;
+        }
+
+        counter++;
     }
 
-    public void ChangeTheBlockSprite()
-    {
-        int randomIndex = Random.Range(0, 3);
-        spriteRendererPanel1.sprite = blockSprites[randomIndex];
-    }
-
-    public void ChangeTheMummySprite()
-    {
-        int randomIndex = Random.Range(0, 3);
-        spriteRendererPanel1.sprite = mummySprites[randomIndex];
-    }
-
-    public void ChangeTheGoddessSprite()
-    {
-        int randomIndex = Random.Range(0, 4);
-        spriteRendererPanel1.sprite = goddessSprites[randomIndex];
-    }
 }
