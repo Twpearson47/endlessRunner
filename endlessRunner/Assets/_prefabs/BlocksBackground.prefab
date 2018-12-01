@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4606717163746484}
-  - component: {fileID: 114817904447446646}
+  - component: {fileID: 114009235657686982}
+  - component: {fileID: 114539365046843910}
   m_Layer: 0
   m_Name: BlocksBackground
   m_TagString: Untagged
@@ -130,7 +131,7 @@ Transform:
   m_Father: {fileID: 4606717163746484}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114817904447446646
+--- !u!114 &114009235657686982
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,19 +139,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044374073504818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9be9eea484f1154296cf7530fee23bb, type: 3}
+  m_Script: {fileID: 11500000, guid: c00fffe4459367347873e09ed8d4e62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockSprites:
+  - {fileID: 21300000, guid: f6a20200ebced0445bf4bde07a6c1815, type: 3}
+  - {fileID: 21300000, guid: 2ca0753c16c6f494d8ca81b8f5bfed77, type: 3}
+  - {fileID: 21300000, guid: 3d06e1d3d7b2e684f872def8efe530a6, type: 3}
+  mummySprites:
+  - {fileID: 21300000, guid: 8096a78596976d541a0919f3b6557eb8, type: 3}
+  - {fileID: 21300000, guid: 08d82842d0203974eafbc3c813fb51e5, type: 3}
+  - {fileID: 21300000, guid: 572168e043f273d409af726058f3707a, type: 3}
+  goddessSprites:
+  - {fileID: 21300000, guid: 833f74821501806449664e206690724b, type: 3}
+  - {fileID: 21300000, guid: c7d2397ab5703924dbd9975b18dc536e, type: 3}
+  - {fileID: 21300000, guid: a9003341f6a8b2d47a04fa20350b5583, type: 3}
+  - {fileID: 21300000, guid: 3234a6b27f89cf4429edfdb685b2b6c2, type: 3}
+  panels:
+  - {fileID: 212854132297283952}
+  - {fileID: 212485012125337984}
+  - {fileID: 212955879712182592}
+  switchCount: 4
+--- !u!114 &114539365046843910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044374073504818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4057883a11a940e4d95a6341e2afd68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 1
   paralax: 1
   spawningCoins: 1
-  spawningObstacles: 1
+  spawningObstacles: 0
+  backGrounds: {fileID: 114009235657686982}
   backgroundSize: -20
   paralaxSpeed: -1
   randomCoin: 40
-  randomRock: 60
-  randomCrate: 40
-  randomCoffin: 70
+  randomRock: 0
+  randomCrate: 0
+  randomCoffin: 0
 --- !u!212 &212485012125337984
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -231,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e43ade29de347bb4f900a67096e1144a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ca0753c16c6f494d8ca81b8f5bfed77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -276,7 +307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f4d9b710889e314fbb00ec7e1cdebcb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d06e1d3d7b2e684f872def8efe530a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

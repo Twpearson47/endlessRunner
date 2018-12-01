@@ -7,7 +7,6 @@ public class ScrollingParallax2 : MonoBehaviour
 
     public bool scrolling, paralax, spawningCoins, spawningObstacles;
     public BackgroundSpriteSwap backGrounds;
-
     public float backgroundSize;
     public float paralaxSpeed;
 
@@ -121,15 +120,14 @@ public class ScrollingParallax2 : MonoBehaviour
         }
 
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
+        if (backGrounds != null)
+        {
+            backGrounds.ChangeBackgroundSprite(leftIndex);
+        }
+
         rightIndex = leftIndex;
         leftIndex++;
         if (leftIndex == layers.Length)
             leftIndex = 0;
-        if (backGrounds != null)
-        {
-            print(leftIndex);
-            backGrounds.ChangeBackgroundSprite();
-        }
-
     }
 }
