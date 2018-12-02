@@ -480,7 +480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218462946
 GameObject:
@@ -1075,6 +1075,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 601462042}
+--- !u!1 &707313437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 707313439}
+  - component: {fileID: 707313438}
+  m_Layer: 0
+  m_Name: BladePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &707313438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707313437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 0}
+--- !u!4 &707313439
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707313437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &725471200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPool: {fileID: 725471201}
   rockPool: {fileID: 863946464}
+  bladePool: {fileID: 707313438}
   cratePool: {fileID: 138003288}
   coffinPool: {fileID: 2106327497}
   urnPool: {fileID: 972764467}
@@ -1307,6 +1349,7 @@ Transform:
   m_Children:
   - {fileID: 725471202}
   - {fileID: 863946465}
+  - {fileID: 707313439}
   - {fileID: 138003289}
   - {fileID: 2106327496}
   - {fileID: 972764466}
@@ -1340,7 +1383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &972764467
 MonoBehaviour:
@@ -2965,6 +3008,11 @@ Prefab:
       propertyPath: spawningUrns
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomBlade
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
@@ -3355,6 +3403,7 @@ MonoBehaviour:
   paralaxSpeed: -1
   randomCoin: 0
   randomRock: 0
+  randomBlade: 0
   randomCrate: 0
   randomCoffin: 0
   randomUrn: 0
@@ -3461,7 +3510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2106327497
 MonoBehaviour:
