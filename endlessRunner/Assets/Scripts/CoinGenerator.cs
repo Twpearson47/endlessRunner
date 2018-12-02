@@ -6,6 +6,7 @@ public class CoinGenerator : MonoBehaviour {
 
     public ObjectPooler coinPool;
     public ObjectPooler rockPool;
+    public ObjectPooler bladePool;
     public ObjectPooler cratePool;
     public ObjectPooler coffinPool;
     public ObjectPooler urnPool;
@@ -43,15 +44,15 @@ public class CoinGenerator : MonoBehaviour {
         }
     }
 
-    public void SpawnCrate(Vector3 startPosition02)
+    public void SpawnBlade(Vector3 startPosition02)
     {
-        if (cratePool.transform.childCount < ObjectPooler.pooledAmount02)
+        if (bladePool.transform.childCount < ObjectPooler.pooledAmount02)
         {
             Debug.Log(startPosition02);
 
-            GameObject crate1 = cratePool.GetPooledObject();
-            crate1.transform.position = startPosition02;
-            crate1.SetActive(true);
+            GameObject blade1 = bladePool.GetPooledObject();
+            blade1.transform.position = startPosition02;
+            blade1.SetActive(true);
         }
     }
 
