@@ -157,7 +157,7 @@ public class scrollingParallax : MonoBehaviour {
                 {
                     if ((randomGeneration > randomBlade) && (randomGeneration < randomCrate) && spawningObstacles == true)
                     {
-                        theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                        theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.4f, transform.position.z));
                     }
                     if ((randomGeneration > randomCrate) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 2)
                     {
