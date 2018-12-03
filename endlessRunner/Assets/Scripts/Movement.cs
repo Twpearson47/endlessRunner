@@ -16,22 +16,19 @@ public class Movement : MonoBehaviour
 
     public bool isGrounded;
     public static bool isDead;
-    public bool isSliding;
+    public static bool isSliding;
 
     public AudioClip VaseHit;
     public AudioClip JumpGrunt;
     public AudioClip ObstacleHit;
     public AudioSource Sound;
 
-    public GameObject rock;
     private Animator movingPlayer;
-    private Animator breakableRock;
     private Rigidbody2D rb;
 
     void Start()
     {
         movingPlayer = GetComponent<Animator>();
-        breakableRock = rock.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         bestLabel.text = PlayerPrefs.GetInt("HighScore", 0).ToString("0000");
         startTime = Time.time;
@@ -84,7 +81,6 @@ public class Movement : MonoBehaviour
         if (col.gameObject.tag == ("Death"))
         {
             Debug.Log("Dead");
-            breakableRock.SetBool("Destroy", true);
             isDead = true;
             Sound.PlayOneShot(ObstacleHit);
             hasDied();
@@ -97,11 +93,22 @@ public class Movement : MonoBehaviour
         Destroy(coinCollider.gameObject);
     }
 
+    void CollectCoin2(Collider2D coinCollider)
+    {
+        ScoreManager.scarabCount++;
+        ScoreManager.scarabCount++;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("Scarab"))
         {
             CollectCoin(collision);
+        }
+        if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
+        {
+            CollectCoin2(collision);
+            Sound.PlayOneShot(VaseHit);
         }
     }
 
