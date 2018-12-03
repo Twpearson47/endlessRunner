@@ -98,6 +98,16 @@ public class scrollingParallax : MonoBehaviour {
                             randomMummy = 80;
                             randomUrn = 100;
                             spawningUrns = 4;
+                            if (Mathf.RoundToInt(Movement.meters) >= 1750)
+                            {
+                                randomRock = 0;
+                                randomBlade = 10;
+                                randomCrate = 10;
+                                randomScorpion = 25;
+                                randomMummy = 55;
+                                randomCoffin = 80;
+                                randomUrn = 100;
+                            }
                         }
                     }
                 }
@@ -175,6 +185,14 @@ public class scrollingParallax : MonoBehaviour {
                             if ((randomGeneration > randomMummy) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 4)
                             {
                                 theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                            }
+
+                            if (Mathf.RoundToInt(Movement.meters) >= 1750)
+                            {
+                                if ((randomGeneration > randomMummy) && (randomGeneration < randomCoffin) && spawningObstacles == true)
+                                {
+                                    theCoinGenerator.SpawnCoffin(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                                }
                             }
                         }
                     }
