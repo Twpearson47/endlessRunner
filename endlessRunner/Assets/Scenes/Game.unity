@@ -2672,6 +2672,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: mummySprites.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4606717163746484, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2704,6 +2709,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: mummySprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3892befc9febe874e921585b85bfb0ae,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: mummySprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: aa15be4a80e16164384f5f19557336c6,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: mummySprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a3ecfffdcbb83b4fa4a825bba938bc2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
