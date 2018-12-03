@@ -6,14 +6,13 @@ public class CoinGenerator : MonoBehaviour {
 
     public ObjectPooler coinPool;
     public ObjectPooler rockPool;
+    public ObjectPooler bladePool;
     public ObjectPooler cratePool;
+    public ObjectPooler scorpionPool;
+    public ObjectPooler mummyPool;
+    public ObjectPooler coffinPool;
+    public ObjectPooler urnPool;
     public float distanceCoins;
-    public bool obstacleSpawning;
-
-    void Start()
-    {
-        obstacleSpawning = false;    
-    }
 
     public void SpawnCoins(Vector3 startPosition)
     {
@@ -37,36 +36,85 @@ public class CoinGenerator : MonoBehaviour {
 
     public void SpawnRock(Vector3 startPosition02)
     {
-        if (Mathf.RoundToInt(Movement.meters) >= 150)
+        if (rockPool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            if (rockPool.transform.childCount < ObjectPooler.pooledAmount02)
-            {
-                Debug.Log(startPosition02);
+            Debug.Log(startPosition02);
 
-                GameObject rock1 = rockPool.GetPooledObject();
-                rock1.transform.position = startPosition02;
-                rock1.SetActive(true);
-                obstacleSpawning = true;
-            }
+            GameObject rock1 = rockPool.GetPooledObject();
+            rock1.transform.position = startPosition02;
+            rock1.SetActive(true);
+        }
+    }
+
+    public void SpawnBlade(Vector3 startPosition02)
+    {
+        if (bladePool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject blade1 = bladePool.GetPooledObject();
+            blade1.transform.position = startPosition02;
+            blade1.SetActive(true);
         }
     }
 
     public void SpawnCrate(Vector3 startPosition02)
     {
-        if ((Mathf.RoundToInt(Movement.meters) >= 250) && obstacleSpawning == false)
+        if (cratePool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            if (cratePool.transform.childCount < ObjectPooler.pooledAmount02)
-            {
-                Debug.Log(startPosition02);
+            Debug.Log(startPosition02);
 
-                GameObject crate1 = cratePool.GetPooledObject();
-                crate1.transform.position = startPosition02;
-                crate1.SetActive(true);
-            }
+            GameObject crate1 = cratePool.GetPooledObject();
+            crate1.transform.position = startPosition02;
+            crate1.SetActive(true);
         }
-        else
+    }
+
+    public void SpawnScorpion(Vector3 startPosition02)
+    {
+        if (scorpionPool.transform.childCount < ObjectPooler.pooledAmount02)
         {
-            obstacleSpawning = false;
+            Debug.Log(startPosition02);
+
+            GameObject scorpion1 = scorpionPool.GetPooledObject();
+            scorpion1.transform.position = startPosition02;
+            scorpion1.SetActive(true);
+        }
+    }
+
+    public void SpawnMummy(Vector3 startPosition02)
+    {
+        if (mummyPool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject mummy1 = mummyPool.GetPooledObject();
+            mummy1.transform.position = startPosition02;
+            mummy1.SetActive(true);
+        }
+    }
+
+    public void SpawnCoffin(Vector3 startPosition02)
+    {
+        if (coffinPool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject coffin1 = coffinPool.GetPooledObject();
+            coffin1.transform.position = startPosition02;
+            coffin1.SetActive(true);
+        }
+    }
+
+    public void SpawnUrn(Vector3 startPosition02)
+    {
+        if (urnPool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject urn1 = urnPool.GetPooledObject();
+            urn1.transform.position = startPosition02;
+            urn1.SetActive(true);
         }
     }
 }

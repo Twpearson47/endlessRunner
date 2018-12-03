@@ -93,11 +93,21 @@ public class Movement : MonoBehaviour
         Destroy(coinCollider.gameObject);
     }
 
+    void CollectCoin2(Collider2D coinCollider)
+    {
+        ScoreManager.scarabCount++;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("Scarab"))
         {
             CollectCoin(collision);
+        }
+        if (collision.gameObject.tag == ("Urn"))
+        {
+            CollectCoin2(collision);
+            Sound.PlayOneShot(VaseHit);
         }
     }
 

@@ -480,7 +480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218462946
 GameObject:
@@ -1075,6 +1075,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 601462042}
+--- !u!1 &707313437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 707313439}
+  - component: {fileID: 707313438}
+  m_Layer: 0
+  m_Name: BladePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &707313438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707313437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1299445222497946, guid: 3f53e4b9a1ed79b4a89b4413131c21c6,
+    type: 2}
+--- !u!4 &707313439
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707313437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &725471200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1333,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPool: {fileID: 725471201}
   rockPool: {fileID: 863946464}
+  bladePool: {fileID: 707313438}
   cratePool: {fileID: 138003288}
+  scorpionPool: {fileID: 1794555531}
+  mummyPool: {fileID: 1337756292}
+  coffinPool: {fileID: 2106327497}
+  urnPool: {fileID: 972764467}
   distanceCoins: 2
 --- !u!4 &928758698
 Transform:
@@ -1305,10 +1352,57 @@ Transform:
   m_Children:
   - {fileID: 725471202}
   - {fileID: 863946465}
+  - {fileID: 707313439}
   - {fileID: 138003289}
+  - {fileID: 1794555532}
+  - {fileID: 1337756293}
+  - {fileID: 2106327496}
+  - {fileID: 972764466}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &972764465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 972764466}
+  - component: {fileID: 972764467}
+  m_Layer: 0
+  m_Name: UrnPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972764466
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972764465}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972764467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972764465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1470990347049764, guid: 8c3b033c33088ba439d4e91e4305050f,
+    type: 2}
 --- !u!1 &1013335920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1578,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 80, y: 8.29}
   m_EdgeRadius: 0
+--- !u!1 &1213525070 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1044374073504818, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
+--- !u!114 &1213525071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213525070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9be9eea484f1154296cf7530fee23bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolling: 1
+  paralax: 1
+  spawningCoins: 1
+  spawningObstacles: 1
+  backGrounds: {fileID: 1213525072}
+  backgroundSize: -20
+  paralaxSpeed: -1
+  randomCoin: 40
+  randomRock: 20
+  randomBlade: 50
+  randomCrate: 60
+  randomScorpion: 70
+  randomMummy: 80
+  randomCoffin: 0
+  randomUrn: 100
+  spawningUrns: 1
+--- !u!114 &1213525072 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
+  m_Script: {fileID: 11500000, guid: c00fffe4459367347873e09ed8d4e62b, type: 3}
 --- !u!1 &1304837162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1759,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1333498388}
+--- !u!1 &1337756291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1337756293}
+  - component: {fileID: 1337756292}
+  m_Layer: 0
+  m_Name: MummyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1337756292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337756291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 0}
+--- !u!4 &1337756293
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337756291}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354341203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,6 +2590,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1746026959}
+--- !u!1 &1794555530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1794555532}
+  - component: {fileID: 1794555531}
+  m_Layer: 0
+  m_Name: ScorpionPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794555531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794555530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1045965663208388, guid: 72b5665ad90633848b5639d3277c9c0c,
+    type: 2}
+--- !u!4 &1794555532
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794555530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799422226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +3119,54 @@ Prefab:
       propertyPath: randomCrate
       value: 40
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoffin
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomUrn
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: spawningUrns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114817904447446646, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomBlade
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ca0753c16c6f494d8ca81b8f5bfed77,
+        type: 3}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomRock
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoin
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCrate
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoffin
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2007489061
@@ -3290,11 +3552,18 @@ MonoBehaviour:
   paralax: 1
   spawningCoins: 0
   spawningObstacles: 0
+  backGrounds: {fileID: 0}
   backgroundSize: -20
   paralaxSpeed: -1
   randomCoin: 0
   randomRock: 0
+  randomBlade: 0
   randomCrate: 0
+  randomScorpion: 0
+  randomMummy: 0
+  randomCoffin: 0
+  randomUrn: 0
+  spawningUrns: 0
 --- !u!1 &2076846702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,6 +3639,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2076846702}
+--- !u!1 &2106327495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2106327496}
+  - component: {fileID: 2106327497}
+  m_Layer: 0
+  m_Name: CoffinPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106327496
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106327495}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2106327497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106327495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1988254731972446, guid: 97280fc0b4564954da7192e350712594,
+    type: 2}
 --- !u!1 &2110353368
 GameObject:
   m_ObjectHideFlags: 0
