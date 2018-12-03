@@ -1102,7 +1102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 0}
+  pooledObject: {fileID: 1299445222497946, guid: 3f53e4b9a1ed79b4a89b4413131c21c6,
+    type: 2}
 --- !u!4 &707313439
 Transform:
   m_ObjectHideFlags: 0
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   rockPool: {fileID: 863946464}
   bladePool: {fileID: 707313438}
   cratePool: {fileID: 138003288}
+  scorpionPool: {fileID: 1794555531}
   coffinPool: {fileID: 2106327497}
   urnPool: {fileID: 972764467}
   distanceCoins: 2
@@ -1351,6 +1353,7 @@ Transform:
   - {fileID: 863946465}
   - {fileID: 707313439}
   - {fileID: 138003289}
+  - {fileID: 1794555532}
   - {fileID: 2106327496}
   - {fileID: 972764466}
   m_Father: {fileID: 0}
@@ -1383,7 +1386,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &972764467
 MonoBehaviour:
@@ -1573,6 +1576,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 80, y: 8.29}
   m_EdgeRadius: 0
+--- !u!1 &1213525070 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1044374073504818, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
+--- !u!114 &1213525071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1213525070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9be9eea484f1154296cf7530fee23bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolling: 1
+  paralax: 1
+  spawningCoins: 1
+  spawningObstacles: 1
+  backGrounds: {fileID: 1213525072}
+  backgroundSize: -20
+  paralaxSpeed: -1
+  randomCoin: 40
+  randomRock: 20
+  randomBlade: 50
+  randomCrate: 60
+  randomScorpion: 70
+  randomCoffin: 0
+  randomUrn: 100
+  spawningUrns: 1
+--- !u!114 &1213525072 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990327928}
+  m_Script: {fileID: 11500000, guid: c00fffe4459367347873e09ed8d4e62b, type: 3}
 --- !u!1 &1304837162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,6 +2546,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1746026959}
+--- !u!1 &1794555530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1794555532}
+  - component: {fileID: 1794555531}
+  m_Layer: 0
+  m_Name: ScorpionPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1794555531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794555530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1555372413624254, guid: f0fbe2578410f3143bcdef4e1b98eb4a,
+    type: 2}
+--- !u!4 &1794555532
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794555530}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799422226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3095,34 @@ Prefab:
       propertyPath: randomBlade
       value: 40
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 212485012125337984, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ca0753c16c6f494d8ca81b8f5bfed77,
+        type: 3}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomRock
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoin
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCrate
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: randomCoffin
+      value: 70
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114539365046843910, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2007489061
@@ -3399,12 +3508,14 @@ MonoBehaviour:
   paralax: 1
   spawningCoins: 0
   spawningObstacles: 0
+  backGrounds: {fileID: 0}
   backgroundSize: -20
   paralaxSpeed: -1
   randomCoin: 0
   randomRock: 0
   randomBlade: 0
   randomCrate: 0
+  randomScorpion: 0
   randomCoffin: 0
   randomUrn: 0
   spawningUrns: 0
@@ -3510,7 +3621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2106327497
 MonoBehaviour:

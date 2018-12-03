@@ -22,6 +22,8 @@ public class scrollingParallax : MonoBehaviour {
     public float randomRock;
     public float randomBlade;
     public float randomCrate;
+    public float randomScorpion;
+    public float randomMummy;
     public float randomCoffin;
     public float randomUrn;
     public int spawningUrns;
@@ -72,13 +74,32 @@ public class scrollingParallax : MonoBehaviour {
                 randomBlade = 50;
                 randomUrn = 100;
                 spawningUrns = 1;
-                if (Mathf.RoundToInt(Movement.meters) >= 600)
+                if (Mathf.RoundToInt(Movement.meters) >= 500)
                 {
-                    randomRock = 10;
-                    randomBlade = 50;
-                    randomCoffin = 70;
+                    randomRock = 15;
+                    randomBlade = 45;
+                    randomCrate = 60;
                     randomUrn = 100;
                     spawningUrns = 2;
+                    if (Mathf.RoundToInt(Movement.meters) >= 800)
+                    {
+                        randomRock = 10;
+                        randomBlade = 30;
+                        randomCrate = 45;
+                        randomScorpion = 70;
+                        randomUrn = 100;
+                        spawningUrns = 3;
+                        if (Mathf.RoundToInt(Movement.meters) >= 1250)
+                        {
+                            randomRock = 0;
+                            randomBlade = 15;
+                            randomCrate = 25;
+                            randomScorpion = 50;
+                            randomMummy = 80;
+                            randomUrn = 100;
+                            spawningUrns = 4;
+                        }
+                    }
                 }
             }
         }
@@ -100,6 +121,10 @@ public class scrollingParallax : MonoBehaviour {
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
         }
+        if ((Random.Range(0f, 100f) < randomCoin) && spawningObstacles == true)
+        {
+            theCoinGenerator.SpawnMummy(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.55f, transform.position.z));
+        }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
@@ -119,15 +144,39 @@ public class scrollingParallax : MonoBehaviour {
                     theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
                 }
 
-                if (Mathf.RoundToInt(Movement.meters) >= 600)
+                if (Mathf.RoundToInt(Movement.meters) >= 500)
                 {
-                    if ((randomGeneration > randomCrate) && (randomGeneration < randomCoffin) && spawningObstacles == true)
+                    if ((randomGeneration > randomBlade) && (randomGeneration < randomCrate) && spawningObstacles == true)
                     {
-                        theCoinGenerator.SpawnCoffin(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                        theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
                     }
-                    if ((randomGeneration > randomCoffin) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 2)
+                    if ((randomGeneration > randomCrate) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 2)
                     {
                         theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                    }
+
+                    if (Mathf.RoundToInt(Movement.meters) >= 800)
+                    {
+                        if ((randomGeneration > randomCrate) && (randomGeneration < randomScorpion) && spawningObstacles == true)
+                        {
+                            theCoinGenerator.SpawnScorpion(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.55f, transform.position.z));
+                        }
+                        if ((randomGeneration > randomScorpion) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 3)
+                        {
+                            theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                        }
+
+                        if (Mathf.RoundToInt(Movement.meters) >= 1250)
+                        {
+                            if ((randomGeneration > randomScorpion) && (randomGeneration < randomMummy) && spawningObstacles == true)
+                            {
+                                theCoinGenerator.SpawnMummy(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.55f, transform.position.z));
+                            }
+                            if ((randomGeneration > randomMummy) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 4)
+                            {
+                                theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                            }
+                        }
                     }
                 }
             }
