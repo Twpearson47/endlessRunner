@@ -1336,6 +1336,7 @@ MonoBehaviour:
   bladePool: {fileID: 707313438}
   cratePool: {fileID: 138003288}
   scorpionPool: {fileID: 1794555531}
+  mummyPool: {fileID: 1337756292}
   coffinPool: {fileID: 2106327497}
   urnPool: {fileID: 972764467}
   distanceCoins: 2
@@ -1354,6 +1355,7 @@ Transform:
   - {fileID: 707313439}
   - {fileID: 138003289}
   - {fileID: 1794555532}
+  - {fileID: 1337756293}
   - {fileID: 2106327496}
   - {fileID: 972764466}
   m_Father: {fileID: 0}
@@ -1386,7 +1388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &972764467
 MonoBehaviour:
@@ -1604,6 +1606,7 @@ MonoBehaviour:
   randomBlade: 50
   randomCrate: 60
   randomScorpion: 70
+  randomMummy: 80
   randomCoffin: 0
   randomUrn: 100
   spawningUrns: 1
@@ -1756,6 +1759,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1333498388}
+--- !u!1 &1337756291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1337756293}
+  - component: {fileID: 1337756292}
+  m_Layer: 0
+  m_Name: MummyPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1337756292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337756291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 0}
+--- !u!4 &1337756293
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337756291}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 928758698}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354341203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,7 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1555372413624254, guid: f0fbe2578410f3143bcdef4e1b98eb4a,
+  pooledObject: {fileID: 1045965663208388, guid: 72b5665ad90633848b5639d3277c9c0c,
     type: 2}
 --- !u!4 &1794555532
 Transform:
@@ -3516,6 +3560,7 @@ MonoBehaviour:
   randomBlade: 0
   randomCrate: 0
   randomScorpion: 0
+  randomMummy: 0
   randomCoffin: 0
   randomUrn: 0
   spawningUrns: 0
@@ -3621,7 +3666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 928758698}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2106327497
 MonoBehaviour:
