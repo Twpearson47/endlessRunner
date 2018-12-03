@@ -5,6 +5,7 @@ using UnityEngine;
 public class scrollingParallax : MonoBehaviour {
 
     public bool scrolling, paralax, spawningCoins, spawningObstacles;
+    public BackgroundSpriteSwap backGrounds;
 
     public float backgroundSize;
     public float paralaxSpeed;
@@ -130,6 +131,12 @@ public class scrollingParallax : MonoBehaviour {
                     }
                 }
             }
+        }
+
+        layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);
+        if (backGrounds != null)
+        {
+            backGrounds.ChangeBackgroundSprite(leftIndex);
         }
 
         layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x - backgroundSize);

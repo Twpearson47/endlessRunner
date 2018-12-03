@@ -106,7 +106,7 @@ public class ScrollingParallax2 : MonoBehaviour
             {
                 if ((randomGeneration > randomRock) && (randomGeneration < randomCrate) && spawningObstacles == true)
                 {
-                    theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.4f, transform.position.z));
+                    //theCoinGenerator.SpawnCrate(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.4f, transform.position.z));
                 }
 
                 if (Mathf.RoundToInt(Movement.meters) >= 600)
