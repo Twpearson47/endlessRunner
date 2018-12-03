@@ -131,10 +131,6 @@ public class scrollingParallax : MonoBehaviour {
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
         }
-        if ((Random.Range(0f, 100f) < randomCoin) && spawningObstacles == true)
-        {
-            theCoinGenerator.SpawnMummy(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.55f, transform.position.z));
-        }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
@@ -151,7 +147,10 @@ public class scrollingParallax : MonoBehaviour {
                 }
                 if ((randomGeneration > randomBlade) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 1)
                 {
-                    theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                    if ((Random.Range(0f, 100f) < 30))
+                    {
+                        theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.28f, transform.position.z));
+                    }
                 }
 
                 if (Mathf.RoundToInt(Movement.meters) >= 500)
@@ -162,7 +161,10 @@ public class scrollingParallax : MonoBehaviour {
                     }
                     if ((randomGeneration > randomCrate) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 2)
                     {
-                        theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                        if ((Random.Range(0f, 100f) < 30))
+                        {
+                            theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.28f, transform.position.z));
+                        }
                     }
 
                     if (Mathf.RoundToInt(Movement.meters) >= 800)
@@ -173,18 +175,24 @@ public class scrollingParallax : MonoBehaviour {
                         }
                         if ((randomGeneration > randomScorpion) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 3)
                         {
-                            theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                            if ((Random.Range(0f, 100f) < 30))
+                            {
+                                theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.28f, transform.position.z));
+                            }
                         }
 
                         if (Mathf.RoundToInt(Movement.meters) >= 1250)
                         {
                             if ((randomGeneration > randomScorpion) && (randomGeneration < randomMummy) && spawningObstacles == true)
                             {
-                                theCoinGenerator.SpawnMummy(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.55f, transform.position.z));
+                                theCoinGenerator.SpawnMummy(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 0.83f, transform.position.z));
                             }
                             if ((randomGeneration > randomMummy) && (randomGeneration < randomUrn) && spawningObstacles == true && spawningUrns == 4)
                             {
-                                theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.2f, transform.position.z));
+                                if ((Random.Range(0f, 100f) < 30))
+                                {
+                                    theCoinGenerator.SpawnUrn(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.28f, transform.position.z));
+                                }
                             }
 
                             if (Mathf.RoundToInt(Movement.meters) >= 1750)
