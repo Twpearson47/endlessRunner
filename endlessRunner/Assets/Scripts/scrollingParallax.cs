@@ -31,6 +31,8 @@ public class scrollingParallax : MonoBehaviour {
     public int spawningUrns;
     public int spawningScarabs;
 
+    public float coinHeight;
+
     private void Start()
     {
         cameraTransform = Camera.main.transform;
@@ -67,6 +69,8 @@ public class scrollingParallax : MonoBehaviour {
                 }
             }
         }
+
+        coinHeight = Random.Range(-1f, 2.8f);
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
@@ -133,7 +137,7 @@ public class scrollingParallax : MonoBehaviour {
         float randomGeneration = Random.Range(0f, 100f);
         if ((Random.Range(0f, 100f) < randomCoin) && spawningCoins == true)
         {
-            theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 3f, transform.position.z));
+            theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + coinHeight, transform.position.z));
         }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
@@ -172,7 +176,7 @@ public class scrollingParallax : MonoBehaviour {
                     }
                     if ((Random.Range(0f, 100f) > randomCoin) && (Random.Range(0f, 100f) < randomCoinR) && spawningCoins == true)
                     {
-                        theCoinGenerator.SpawnCoins2(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
+                        theCoinGenerator.SpawnCoins2(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + coinHeight, transform.position.z));
                     }
 
                     if (Mathf.RoundToInt(Movement.meters) >= 800)
@@ -197,7 +201,7 @@ public class scrollingParallax : MonoBehaviour {
                         }
                         if ((Random.Range(0f, 100f) > randomCoinR) && (Random.Range(0f, 100f) < randomCoinG) && spawningCoins == true)
                         {
-                            theCoinGenerator.SpawnCoins3(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 2f, transform.position.z));
+                            theCoinGenerator.SpawnCoins3(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + coinHeight, transform.position.z));
                         }
 
                         if (Mathf.RoundToInt(Movement.meters) >= 1250)
