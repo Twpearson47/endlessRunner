@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     public float currentTime;
     public static float meters;
 
+    public int scarabCount;
+
     public Text meterLabel;
     public Text bestLabel;
 
@@ -35,6 +37,7 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         isDead = false;
         isSliding = false;
+        scarabCount = 1;
     }
 
     void Update()
@@ -95,8 +98,28 @@ public class Movement : MonoBehaviour
 
     void CollectCoin2(Collider2D coinCollider)
     {
-        ScoreManager.scarabCount++;
-        ScoreManager.scarabCount++;
+        while (scarabCount < 3)
+        {
+            ScoreManager.scarabCount++;
+            scarabCount++;
+        }
+        if (scarabCount == 3)
+        {
+            scarabCount = 1;
+        }
+    }
+
+    void CollectCoin3(Collider2D coinCollider)
+    {
+        while (scarabCount < 4)
+        {
+            ScoreManager.scarabCount++;
+            scarabCount++;
+        }
+        if (scarabCount == 4)
+        {
+            scarabCount = 1;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -108,6 +131,11 @@ public class Movement : MonoBehaviour
         if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
             CollectCoin2(collision);
+            Sound.PlayOneShot(VaseHit);
+        }
+        if ((collision.gameObject.tag == ("UrnB")) && isSliding == true)
+        {
+            CollectCoin3(collision);
             Sound.PlayOneShot(VaseHit);
         }
     }
