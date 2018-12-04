@@ -10,6 +10,8 @@ TagManager:
   - Urn
   - Destroyer
   - UrnB
+  - Faller
+  - Falling
   layers:
   - Default
   - TransparentFX

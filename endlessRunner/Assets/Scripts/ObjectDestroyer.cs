@@ -40,8 +40,12 @@ public class ObjectDestroyer : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == ("Death"))
         {
-            if (collider.gameObject.tag == ("Death"))
+            ObjectDestroy02(collider);
+        }
+        if (collider.gameObject.tag == ("Falling"))
         {
             ObjectDestroy02(collider);
         }
