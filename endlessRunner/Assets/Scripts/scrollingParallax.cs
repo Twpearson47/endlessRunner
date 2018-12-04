@@ -139,6 +139,10 @@ public class scrollingParallax : MonoBehaviour {
         {
             theCoinGenerator.SpawnCoins(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + coinHeight, transform.position.z));
         }
+        if ((Random.Range(0f, 100f) < 70) && spawningObstacles == true)
+        {
+            theCoinGenerator.SpawnFalling(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 3f, transform.position.z));
+        }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {

@@ -6,7 +6,8 @@ public class CoinGenerator : MonoBehaviour {
 
     public ObjectPooler coinPool;
     public ObjectPooler coin2Pool;
-    public ObjectPooler coin3Pool; 
+    public ObjectPooler coin3Pool;
+    public ObjectPooler fallingPool;
     public ObjectPooler rockPool;
     public ObjectPooler bladePool;
     public ObjectPooler cratePool;
@@ -16,6 +17,7 @@ public class CoinGenerator : MonoBehaviour {
     public ObjectPooler urnPool;
     public ObjectPooler urn2Pool;
     public float distanceCoins;
+    public float distanceFalling;
 
     public void SpawnCoins(Vector3 startPosition)
     {
@@ -74,6 +76,22 @@ public class CoinGenerator : MonoBehaviour {
             GameObject coin3 = coin3Pool.GetPooledObject();
             coin3.transform.position = new Vector3(startPosition.x + distanceCoins, startPosition.y, startPosition.z);
             coin3.SetActive(true);
+        }
+    }
+
+    public void SpawnFalling(Vector3 startPosition)
+    {
+        if (fallingPool.transform.childCount < ObjectPooler.pooledAmount)
+        {
+            Debug.Log(startPosition);
+
+            GameObject falling1 = fallingPool.GetPooledObject();
+            falling1.transform.position = new Vector3(startPosition.x - distanceFalling, startPosition.y, startPosition.z);
+            falling1.SetActive(true);
+
+            GameObject falling2 = fallingPool.GetPooledObject();
+            falling2.transform.position = new Vector3(startPosition.x + distanceFalling, startPosition.y, startPosition.z);
+            falling2.SetActive(true);
         }
     }
 
