@@ -1495,6 +1495,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &842067133
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497449388178970, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582034978701376, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+      propertyPath: m_TagString
+      value: Death
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1f6061ff1474ebf4db8a083627b5f562, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &842067134 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1582034978701376, guid: 1f6061ff1474ebf4db8a083627b5f562,
+    type: 2}
+  m_PrefabInternal: {fileID: 842067133}
+--- !u!61 &842067135
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842067134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.42783916, y: -2.6240866}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.400001, y: 10.309999}
+    newSize: {x: 12.400001, y: 10.309999}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.463879, y: 5.061826}
+  m_EdgeRadius: 0
 --- !u!1 &863946463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,7 +1643,7 @@ MonoBehaviour:
   coinPool: {fileID: 725471201}
   coin2Pool: {fileID: 47865858}
   coin3Pool: {fileID: 489987294}
-  fallingPool: {fileID: 0}
+  fallingPool: {fileID: 284078766}
   rockPool: {fileID: 863946464}
   bladePool: {fileID: 707313438}
   cratePool: {fileID: 138003288}
