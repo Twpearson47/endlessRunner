@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class DestroyAnimation : MonoBehaviour {
     
-    private Animator breakableRock;
+    private Animator breakableObj;
 
     void Start()
     {
-        breakableRock = GetComponent<Animator>();
+        breakableObj = GetComponent<Animator>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == ("Player"))
         {
-            breakableRock.SetBool("Destroy", true);
+            breakableObj.SetBool("Destroy", true);
         }
     }
 
@@ -23,7 +23,7 @@ public class DestroyAnimation : MonoBehaviour {
     {
         if (col.gameObject.tag == ("Player"))
         {
-            breakableRock.SetBool("Destroy", true);
+            breakableObj.SetBool("Destroy", true);
         }
     }
 }

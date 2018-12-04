@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212688284611620052}
   - component: {fileID: 95943059610265396}
   - component: {fileID: 61611884415140174}
-  - component: {fileID: 114282108679544054}
+  - component: {fileID: 114578995088691138}
   m_Layer: 0
   m_Name: urn1-01
   m_TagString: Urn
@@ -86,7 +86,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114282108679544054
+--- !u!114 &114578995088691138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1470990347049764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8e8b5868caeb84792fb28f4b78f565, type: 3}
+  m_Script: {fileID: 11500000, guid: 15d90d979f5083c4181fbafd907f6b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212688284611620052

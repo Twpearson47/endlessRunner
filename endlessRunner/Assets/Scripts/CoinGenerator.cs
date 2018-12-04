@@ -5,6 +5,8 @@ using UnityEngine;
 public class CoinGenerator : MonoBehaviour {
 
     public ObjectPooler coinPool;
+    public ObjectPooler coin2Pool;
+    public ObjectPooler coin3Pool;
     public ObjectPooler rockPool;
     public ObjectPooler bladePool;
     public ObjectPooler cratePool;
@@ -12,6 +14,7 @@ public class CoinGenerator : MonoBehaviour {
     public ObjectPooler mummyPool;
     public ObjectPooler coffinPool;
     public ObjectPooler urnPool;
+    public ObjectPooler urn2Pool;
     public float distanceCoins;
 
     public void SpawnCoins(Vector3 startPosition)
@@ -21,6 +24,46 @@ public class CoinGenerator : MonoBehaviour {
             Debug.Log(startPosition);
 
             GameObject coin1 = coinPool.GetPooledObject();
+            coin1.transform.position = startPosition;
+            coin1.SetActive(true);
+
+            GameObject coin2 = coinPool.GetPooledObject();
+            coin2.transform.position = new Vector3(startPosition.x - distanceCoins, startPosition.y, startPosition.z);
+            coin2.SetActive(true);
+
+            GameObject coin3 = coinPool.GetPooledObject();
+            coin3.transform.position = new Vector3(startPosition.x + distanceCoins, startPosition.y, startPosition.z);
+            coin3.SetActive(true);
+        }
+    }
+
+    public void SpawnCoins2(Vector3 startPosition)
+    {
+        if (coin2Pool.transform.childCount < ObjectPooler.pooledAmount)
+        {
+            Debug.Log(startPosition);
+
+            GameObject coin1 = coin2Pool.GetPooledObject();
+            coin1.transform.position = startPosition;
+            coin1.SetActive(true);
+
+            GameObject coin2 = coinPool.GetPooledObject();
+            coin2.transform.position = new Vector3(startPosition.x - distanceCoins, startPosition.y, startPosition.z);
+            coin2.SetActive(true);
+
+            GameObject coin3 = coinPool.GetPooledObject();
+            coin3.transform.position = new Vector3(startPosition.x + distanceCoins, startPosition.y, startPosition.z);
+            coin3.SetActive(true);
+        }
+    }
+
+    public void SpawnCoins3(Vector3 startPosition)
+    {
+        if (coin3Pool.transform.childCount < ObjectPooler.pooledAmount)
+        {
+            Debug.Log(startPosition);
+
+            GameObject coin1 = coin3Pool.GetPooledObject();
             coin1.transform.position = startPosition;
             coin1.SetActive(true);
 
@@ -113,6 +156,18 @@ public class CoinGenerator : MonoBehaviour {
             Debug.Log(startPosition02);
 
             GameObject urn1 = urnPool.GetPooledObject();
+            urn1.transform.position = startPosition02;
+            urn1.SetActive(true);
+        }
+    }
+
+    public void SpawnUrn2(Vector3 startPosition02)
+    {
+        if (urn2Pool.transform.childCount < ObjectPooler.pooledAmount02)
+        {
+            Debug.Log(startPosition02);
+
+            GameObject urn1 = urn2Pool.GetPooledObject();
             urn1.transform.position = startPosition02;
             urn1.SetActive(true);
         }

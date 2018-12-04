@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
 
     public bool isGrounded;
     public static bool isDead;
-    public bool isSliding;
+    public static bool isSliding;
 
     public AudioClip VaseHit;
     public AudioClip JumpGrunt;
@@ -96,6 +96,7 @@ public class Movement : MonoBehaviour
     void CollectCoin2(Collider2D coinCollider)
     {
         ScoreManager.scarabCount++;
+        ScoreManager.scarabCount++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -104,7 +105,7 @@ public class Movement : MonoBehaviour
         {
             CollectCoin(collision);
         }
-        if (collision.gameObject.tag == ("Urn"))
+        if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
             CollectCoin2(collision);
             Sound.PlayOneShot(VaseHit);
