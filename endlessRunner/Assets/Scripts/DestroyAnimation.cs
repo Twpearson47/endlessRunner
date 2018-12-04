@@ -25,5 +25,9 @@ public class DestroyAnimation : MonoBehaviour {
         {
             breakableObj.SetBool("Destroy", true);
         }
+        if (col.gameObject.tag == ("Faller"))
+        {
+            breakableObj.SetBool("Destroy", true);
+        }
     }
 }
