@@ -12,9 +12,11 @@ public class Movement : MonoBehaviour
     public static float meters;
 
     public int scarabCount;
+    public int endScarab;
 
     public Text meterLabel;
     public Text bestLabel;
+    public Text coinLabel;
 
     public bool isGrounded;
     public static bool isDead;
@@ -38,6 +40,8 @@ public class Movement : MonoBehaviour
         isDead = false;
         isSliding = false;
         scarabCount = 1;
+        endScarab = PlayerPrefs.GetInt("CoinsCollected");
+        coinLabel.text = endScarab.ToString("000");
     }
 
     void Update()
@@ -107,6 +111,10 @@ public class Movement : MonoBehaviour
         {
             scarabCount = 1;
         }
+        if (coinCollider.gameObject.tag == ("ScarabR"))
+        {
+            Destroy(coinCollider.gameObject);
+        }
     }
 
     void CollectCoin3(Collider2D coinCollider)
@@ -120,6 +128,10 @@ public class Movement : MonoBehaviour
         {
             scarabCount = 1;
         }
+        if (coinCollider.gameObject.tag == ("ScarabG"))
+        {
+            Destroy(coinCollider.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -127,6 +139,14 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == ("Scarab"))
         {
             CollectCoin(collision);
+        }
+        if (collision.gameObject.tag == ("ScarabR"))
+        {
+            CollectCoin2(collision);
+        }
+        if (collision.gameObject.tag == ("ScarabG"))
+        {
+            CollectCoin3(collision);
         }
         if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
@@ -147,5 +167,7 @@ public class Movement : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
             bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
         }
+        PlayerPrefs.SetInt("CoinsCollected", endScarab + Mathf.RoundToInt(ScoreManager.scarabCount));
+        coinLabel.text = (endScarab + Mathf.RoundToInt(ScoreManager.scarabCount)).ToString("000");
     }
 }

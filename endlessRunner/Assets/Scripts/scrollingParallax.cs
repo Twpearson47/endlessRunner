@@ -141,14 +141,14 @@ public class scrollingParallax : MonoBehaviour {
         }
         if ((Random.Range(0f, 100f) < 70) && spawningObstacles == true)
         {
-            theCoinGenerator.SpawnFalling(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 3.7f, transform.position.z));
+            theCoinGenerator.SpawnFalling(new Vector3((transform.position.x * -1f) + 20f, transform.position.y + 6.1f, transform.position.z));
         }
 
         if (Mathf.RoundToInt(Movement.meters) >= 150)
         {
             if ((randomGeneration < randomRock) && spawningObstacles == true)
             {
-                theCoinGenerator.SpawnRock(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 2.7f, transform.position.z));
+                theCoinGenerator.SpawnRock(new Vector3((transform.position.x * -1f) + 20f, transform.position.y - 3f, transform.position.z));
             }
 
             if (Mathf.RoundToInt(Movement.meters) >= 250)

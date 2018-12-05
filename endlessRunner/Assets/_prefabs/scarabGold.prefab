@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61135805863518372}
   m_Layer: 0
   m_Name: scarabGold
-  m_TagString: Untagged
+  m_TagString: ScarabG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

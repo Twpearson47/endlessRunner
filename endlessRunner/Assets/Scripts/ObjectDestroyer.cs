@@ -33,7 +33,19 @@ public class ObjectDestroyer : MonoBehaviour {
         {
             ObjectDestroy(collision);
         }
+        if (collision.gameObject.tag == ("ScarabR"))
+        {
+            ObjectDestroy(collision);
+        }
+        if (collision.gameObject.tag == ("ScarabG"))
+        {
+            ObjectDestroy(collision);
+        }
         if (collision.gameObject.tag == ("Urn"))
+        {
+            ObjectDestroy(collision);
+        }
+        if (collision.gameObject.tag == ("UrnB"))
         {
             ObjectDestroy(collision);
         }
