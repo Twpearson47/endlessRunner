@@ -12,6 +12,8 @@ TagManager:
   - UrnB
   - Faller
   - Falling
+  - ScarabR
+  - ScarabG
   layers:
   - Default
   - TransparentFX

@@ -12,9 +12,12 @@ public class Movement : MonoBehaviour
     public static float meters;
 
     public int scarabCount;
+    public int endScarab;
+    public int totalScarab;
 
     public Text meterLabel;
     public Text bestLabel;
+    public Text coinLabel;
 
     public bool isGrounded;
     public static bool isDead;
@@ -38,6 +41,7 @@ public class Movement : MonoBehaviour
         isDead = false;
         isSliding = false;
         scarabCount = 1;
+        endScarab = totalScarab;
     }
 
     void Update()
@@ -128,6 +132,14 @@ public class Movement : MonoBehaviour
         {
             CollectCoin(collision);
         }
+        if (collision.gameObject.tag == ("ScarabR"))
+        {
+            CollectCoin2(collision);
+        }
+        if (collision.gameObject.tag == ("ScarabG"))
+        {
+            CollectCoin3(collision);
+        }
         if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
             CollectCoin2(collision);
@@ -147,5 +159,7 @@ public class Movement : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
             bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
         }
+        totalScarab = endScarab + Mathf.RoundToInt(ScoreManager.scarabCount);
+        coinLabel.text = PlayerPrefs.GetInt("HighScore", totalScarab).ToString("000");
     }
 }
