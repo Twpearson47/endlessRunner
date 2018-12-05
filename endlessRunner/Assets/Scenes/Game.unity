@@ -3130,8 +3130,11 @@ MonoBehaviour:
   startTime: 0
   currentTime: 0
   scarabCount: 0
+  endScarab: 0
+  totalScarab: 0
   meterLabel: {fileID: 2030459924}
   bestLabel: {fileID: 1013335922}
+  coinLabel: {fileID: 2076846704}
   isGrounded: 0
   VaseHit: {fileID: 8300000, guid: a60f1feacb8ddd04baf1c27aa0fd6735, type: 3}
   JumpGrunt: {fileID: 8300000, guid: 1091df4799fb65f468be82d0070f0798, type: 3}
@@ -3438,7 +3441,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 000
 --- !u!222 &2076846705
 CanvasRenderer:
   m_ObjectHideFlags: 0

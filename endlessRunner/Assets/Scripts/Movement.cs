@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour
 
     public int scarabCount;
     public int endScarab;
-    public int totalScarab;
 
     public Text meterLabel;
     public Text bestLabel;
@@ -41,7 +40,8 @@ public class Movement : MonoBehaviour
         isDead = false;
         isSliding = false;
         scarabCount = 1;
-        endScarab = totalScarab;
+        endScarab = PlayerPrefs.GetInt("CoinsCollected");
+        coinLabel.text = endScarab.ToString("000");
     }
 
     void Update()
@@ -111,6 +111,10 @@ public class Movement : MonoBehaviour
         {
             scarabCount = 1;
         }
+        if (coinCollider.gameObject.tag == ("ScarabR"))
+        {
+            Destroy(coinCollider.gameObject);
+        }
     }
 
     void CollectCoin3(Collider2D coinCollider)
@@ -123,6 +127,10 @@ public class Movement : MonoBehaviour
         if (scarabCount == 4)
         {
             scarabCount = 1;
+        }
+        if (coinCollider.gameObject.tag == ("ScarabG"))
+        {
+            Destroy(coinCollider.gameObject);
         }
     }
 
@@ -159,7 +167,7 @@ public class Movement : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
             bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
         }
-        totalScarab = endScarab + Mathf.RoundToInt(ScoreManager.scarabCount);
-        coinLabel.text = PlayerPrefs.GetInt("HighScore", totalScarab).ToString("000");
+        PlayerPrefs.SetInt("CoinsCollected", endScarab + Mathf.RoundToInt(ScoreManager.scarabCount));
+        coinLabel.text = (endScarab + Mathf.RoundToInt(ScoreManager.scarabCount)).ToString("000");
     }
 }
