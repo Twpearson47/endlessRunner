@@ -21,9 +21,7 @@ public class CheckSoundState : MonoBehaviour
 
     public void ToggleAudio()
     {
-        Debug.Log("AudioState " + SoundController.audioState);
         SoundController.audioState = !SoundController.audioState;
-        Debug.Log("AudioState " + SoundController.audioState);
         GetComponent<AudioListener>().enabled = SoundController.audioState;
     }
 }

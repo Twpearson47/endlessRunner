@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 326795122}
   - component: {fileID: 326795121}
   - component: {fileID: 326795125}
+  - component: {fileID: 326795126}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -794,6 +795,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2007489061}
+--- !u!114 &326795126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326795120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa44aeb41b5d50f4bbc968259020094b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335063644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3131,7 +3143,6 @@ MonoBehaviour:
   currentTime: 0
   scarabCount: 0
   endScarab: 0
-  totalScarab: 0
   meterLabel: {fileID: 2030459924}
   bestLabel: {fileID: 1013335922}
   coinLabel: {fileID: 2076846704}
