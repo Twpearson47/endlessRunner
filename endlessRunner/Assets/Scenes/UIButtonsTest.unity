@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 142498857}
   - component: {fileID: 142498856}
   - component: {fileID: 142498855}
+  - component: {fileID: 142498858}
   m_Layer: 5
   m_Name: creditsButton
   m_TagString: Untagged
@@ -188,7 +189,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 142498856}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142498858}
+        m_MethodName: DebugText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &142498856
@@ -224,6 +247,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 142498853}
+--- !u!114 &142498858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142498853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 758205434}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1 &151272242
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +623,25 @@ Transform:
   m_Father: {fileID: 751983959}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &441678577 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1326762046812830, guid: fb315f037c34bf54986fcbec424960a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1636323578}
+--- !u!114 &441678582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441678577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 441678577}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1001 &536340771
 Prefab:
   m_ObjectHideFlags: 0
@@ -593,6 +649,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224146545398262024, guid: 49f5a26691d9e0b4695c4d3747d79d54,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -686,6 +747,31 @@ Prefab:
     - target: {fileID: 1817375468150918, guid: 49f5a26691d9e0b4695c4d3747d79d54, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 758205439}
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnPanelOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974883205544076, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49f5a26691d9e0b4695c4d3747d79d54, type: 2}
@@ -1011,6 +1097,25 @@ MonoBehaviour:
   tab: {fileID: 151272244}
   button01: {fileID: 21300000, guid: 6ebc51f1c031f5f4c9b69d3cb3b6b530, type: 3}
   button02: {fileID: 21300000, guid: dc23aa4a272fae344ab13ef079580965, type: 3}
+--- !u!1 &758205434 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1817375468150918, guid: 49f5a26691d9e0b4695c4d3747d79d54,
+    type: 2}
+  m_PrefabInternal: {fileID: 536340771}
+--- !u!114 &758205439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758205434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 758205434}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1 &972318662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1195,7 @@ GameObject:
   - component: {fileID: 1049353074}
   - component: {fileID: 1049353073}
   - component: {fileID: 1049353072}
+  - component: {fileID: 1049353075}
   m_Layer: 5
   m_Name: audioButton
   m_TagString: Untagged
@@ -1155,17 +1261,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1049353075}
+        m_MethodName: ToggleAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1049353073
@@ -1201,6 +1307,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1049353070}
+--- !u!114 &1049353075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049353070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 1049353070}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1 &1051580717
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1332,7 @@ GameObject:
   - component: {fileID: 1051580721}
   - component: {fileID: 1051580720}
   - component: {fileID: 1051580719}
+  - component: {fileID: 1051580722}
   m_Layer: 5
   m_Name: controlsButton
   m_TagString: Untagged
@@ -1276,7 +1397,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1051580720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1051580722}
+        m_MethodName: TurnPanelOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1051580720
@@ -1312,6 +1444,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1051580717}
+--- !u!114 &1051580722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051580717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 758205434}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1 &1085389334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1762,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224819531028928376, guid: fb315f037c34bf54986fcbec424960a6,
         type: 2}
       propertyPath: m_RootOrder
@@ -1715,6 +1866,31 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 441678582}
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnPanelOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524084748480208, guid: fb315f037c34bf54986fcbec424960a6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb315f037c34bf54986fcbec424960a6, type: 2}
   m_IsPrefabParent: 0
@@ -1797,6 +1973,7 @@ GameObject:
   - component: {fileID: 1961233392}
   - component: {fileID: 1961233391}
   - component: {fileID: 1961233390}
+  - component: {fileID: 1961233393}
   m_Layer: 5
   m_Name: quitButton
   m_TagString: Untagged
@@ -1861,7 +2038,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1961233391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1961233393}
+        m_MethodName: ConfirmQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1961233391
@@ -1897,6 +2085,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1961233388}
+--- !u!114 &1961233393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1961233388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 441678577}
+  cameraAudio: {fileID: 1301826242}
 --- !u!1 &1971447573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +2184,7 @@ GameObject:
   - component: {fileID: 2020481984}
   - component: {fileID: 2020481983}
   - component: {fileID: 2020481982}
+  - component: {fileID: 2020481985}
   m_Layer: 5
   m_Name: hintsButton
   m_TagString: Untagged
@@ -2046,7 +2249,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2020481983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2020481985}
+        m_MethodName: TurnPanelOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2020481983
@@ -2082,3 +2296,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020481980}
+--- !u!114 &2020481985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020481980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb57b23b3ad38a40a6abe7b75fe31be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePanelWithButtons: {fileID: 410445588}
+  panelToAppearOnTop: {fileID: 441678577}
+  cameraAudio: {fileID: 1301826242}
