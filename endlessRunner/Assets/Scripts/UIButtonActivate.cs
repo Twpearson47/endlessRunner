@@ -5,14 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonActivate : MonoBehaviour
 {
-    public void TurnCreditsPanelOn()
+
+    public void LoadMainMenu()
     {
-        Debug.Log("The credits button got clicked, need Credits panel");
+        Time.timeScale = 1;
+        PauseMenu.GameIsPaused = false;
+        Movement.isDead = false;
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit button pressed");
+        Debug.Log("Quit confirmation has been pressed");
     }
+
+    public void DebugLog()
+    {
+        Debug.Log("This button got clicked");
+    }
+
 }
