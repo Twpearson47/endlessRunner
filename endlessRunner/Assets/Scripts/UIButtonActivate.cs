@@ -20,6 +20,16 @@ public class UIButtonActivate : MonoBehaviour
         Debug.Log("Quit confirmation has been pressed");
     }
 
+    public void PlayAgain()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
+        PauseMenu.GameIsPaused = false;
+        Movement.isDead = false;
+        ScoreManager.scarabCount = 0;
+    }
+
+
     public void DebugLog()
     {
         Debug.Log("This button got clicked");

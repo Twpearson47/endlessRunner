@@ -1312,11 +1312,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1479080220}
+      objectReference: {fileID: 1163981408}
     - target: {fileID: 114315672828483282, guid: a2bfb9926b5fa19479ac304cef686d45,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
+      value: PlayAgain
       objectReference: {fileID: 0}
     - target: {fileID: 114315672828483282, guid: a2bfb9926b5fa19479ac304cef686d45,
         type: 2}
@@ -3429,6 +3429,11 @@ Prefab:
     - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
         type: 2}
       propertyPath: mummySprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4606717163746484, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
@@ -3490,6 +3495,40 @@ Prefab:
         type: 2}
       propertyPath: randomCoinG
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114005175683754010, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b76ee7856377e148a52400c47186b21,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b311408a3927a634bb1f26a472d1e69b,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: d1cf511b7ebae1e4fa589e97d3c9bcc5,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: mummySprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: e2df0d4b9262df348895dfe39d59cc54,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: switchCount
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
