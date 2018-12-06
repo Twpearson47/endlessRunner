@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class TurnOnGameOverPanel : MonoBehaviour {
     public GameObject gameOverPanel;
+    public float gameOverWaitSeconds;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	void Update ()
+    void Update ()
     {
         if (Movement.isDead == true)
         {
-            Time.timeScale = 0;
-            gameOverPanel.SetActive(true);
-            PauseMenu.GameIsPaused = true;
+            StartCoroutine(Wait());
         }
     }
+
+    IEnumerator Wait()
+    {
+        Debug.Log("Start Wait() function. The time is: " + Time.time);
+        yield return new WaitForSeconds(gameOverWaitSeconds);   //Wait for 
+        Debug.Log("End Wait() function and the time is: " + Time.time);
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+        PauseMenu.GameIsPaused = true;
+    }
+
 }
