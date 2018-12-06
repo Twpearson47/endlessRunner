@@ -14,9 +14,14 @@ public class Movement : MonoBehaviour
     public int scarabCount;
     public int endScarab;
 
+    public bool newHighscore;
+    public Text bestScore;
+
     public Text meterLabel;
     public Text bestLabel;
     public Text coinLabel;
+    public Text finishedLabel;
+    public Text endLabel;
 
     public bool isGrounded;
     public static bool isDead;
@@ -39,6 +44,7 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         isDead = false;
         isSliding = false;
+        bestScore.enabled = false;
         scarabCount = 1;
         endScarab = PlayerPrefs.GetInt("CoinsCollected");
         coinLabel.text = endScarab.ToString("000");
@@ -76,6 +82,10 @@ public class Movement : MonoBehaviour
             currentTime = Time.time;
             meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
             meterLabel.text = Mathf.RoundToInt(meters).ToString("0000");
+        }
+        if (newHighscore == true)
+        {
+            bestScore.enabled = true;
         }
     }
 
@@ -166,8 +176,11 @@ public class Movement : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
             bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
+            newHighscore = true;
         }
         PlayerPrefs.SetInt("CoinsCollected", endScarab + Mathf.RoundToInt(ScoreManager.scarabCount));
         coinLabel.text = (endScarab + Mathf.RoundToInt(ScoreManager.scarabCount)).ToString("000");
+        finishedLabel.text = Mathf.RoundToInt(meters).ToString("0000");
+        endLabel.text = (ScoreManager.scarabCount).ToString("000");
     }
 }
