@@ -35,9 +35,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
-        GameIsPaused = true;
+        if (Movement.isDead == false)
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0;
+            GameIsPaused = true;
+        }
     }
     public void Restart()
     {
