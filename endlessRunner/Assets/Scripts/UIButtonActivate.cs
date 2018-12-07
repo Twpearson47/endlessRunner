@@ -11,6 +11,7 @@ public class UIButtonActivate : MonoBehaviour
         Time.timeScale = 1;
         PauseMenu.GameIsPaused = false;
         Movement.isDead = false;
+        ScoreManager.scarabCount = 0;
         SceneManager.LoadScene("Main Menu");
     }
 
