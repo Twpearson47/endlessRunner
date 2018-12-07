@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Movement : MonoBehaviour
+public class Movement1 : MonoBehaviour
 {
     public float speed = 0.15f;
     public float JumpHeight;
@@ -14,39 +14,17 @@ public class Movement : MonoBehaviour
     public int scarabCount;
     public int endScarab;
 
-    public bool newHighscore;
-    public Text bestScore;
-
     public Text meterLabel;
     public Text bestLabel;
     public Text coinLabel;
-    public Text finishedLabel;
-    public Text endLabel;
 
     public bool isGrounded;
     public static bool isDead;
     public static bool isSliding;
 
-    public AudioClip VaseHit1;
-    public AudioClip VaseHit2;
-    public AudioClip VaseHit3;
-    public AudioClip VaseHit4;
-    public AudioClip JumpGrunt1;
-    public AudioClip JumpGrunt2;
-    public AudioClip Mummy;
+    public AudioClip VaseHit;
+    public AudioClip JumpGrunt;
     public AudioClip ObstacleHit;
-    public AudioClip RockFall1;
-    public AudioClip RockFall2;
-    public AudioClip RockFall3;
-    public AudioClip Rock1;
-    public AudioClip Rock2;
-    public AudioClip Slide1;
-    public AudioClip Slide2;
-    public AudioClip Scarab1;
-    public AudioClip Scarab2;
-    public AudioClip Crate;
-    public AudioClip Scorpion;
-    public AudioClip Death;
     public AudioSource Sound;
 
     private Animator movingPlayer;
@@ -61,7 +39,6 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         isDead = false;
         isSliding = false;
-        bestScore.enabled = false;
         scarabCount = 1;
         endScarab = PlayerPrefs.GetInt("CoinsCollected");
         coinLabel.text = endScarab.ToString("000");
@@ -69,23 +46,21 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
+        if (Input.GetKeyDown("space") && isGrounded == true)
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+            Sound.PlayOneShot(JumpGrunt);
             movingPlayer.SetBool("IsJumping", true);
-            SoundManager.instance.RandomizeSfx(JumpGrunt1, JumpGrunt2);
         }
         if (Input.GetKeyUp("space"))
         {
             movingPlayer.SetBool("IsJumping", false);
         }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) && isGrounded == true)
+        if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
         {
             isSliding = true;
             movingPlayer.SetBool("IsSliding", true);
-            SoundManager.instance.RandomizeSfx(Slide1, Slide2);
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
@@ -106,10 +81,6 @@ public class Movement : MonoBehaviour
         {
             movingPlayer.SetBool("IsDead", true);
         }
-        if (newHighscore == true)
-        {
-            bestScore.enabled = true;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -118,37 +89,11 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (col.gameObject.layer == 8)
-        {
-            SoundManager.instance.RandomizeSfx(Rock1, Rock2);
-        }
-
-        if (col.gameObject.layer == 9)
-        {
-            Sound.PlayOneShot(Scorpion);
-        }
-
-        if (col.gameObject.layer == 10)
-        {
-            Sound.PlayOneShot(Crate);
-        }
-
-        if (col.gameObject.layer == 11)
-        {
-            Sound.PlayOneShot(Mummy);
-        }
-        
-        if (col.gameObject.layer == 12)
-        {
-            Sound.PlayOneShot(ObstacleHit);
-        } 
-
         if (col.gameObject.tag == ("Death"))
         {
             Debug.Log("Dead");
             isDead = true;
-            SoundManager.instance.musicSource.Stop();
-            Sound.PlayOneShot(Death);
+            Sound.PlayOneShot(ObstacleHit);
             hasDied();
         }
     }
@@ -198,27 +143,24 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == ("Scarab"))
         {
             CollectCoin(collision);
-            Sound.PlayOneShot(Scarab2);
         }
         if (collision.gameObject.tag == ("ScarabR"))
         {
             CollectCoin2(collision);
-            Sound.PlayOneShot(Scarab2);
         }
         if (collision.gameObject.tag == ("ScarabG"))
         {
             CollectCoin3(collision);
-            Sound.PlayOneShot(Scarab1);
         }
         if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
             CollectCoin2(collision);
-            SoundManager.instance.RandomizeSfx(VaseHit2, VaseHit1, VaseHit4);
+            Sound.PlayOneShot(VaseHit);
         }
         if ((collision.gameObject.tag == ("UrnB")) && isSliding == true)
         {
             CollectCoin3(collision);
-            Sound.PlayOneShot(VaseHit3);
+            Sound.PlayOneShot(VaseHit);
         }
     }
 
@@ -228,11 +170,8 @@ public class Movement : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", Mathf.RoundToInt(meters));
             bestLabel.text = Mathf.RoundToInt(meters).ToString("0000");
-            newHighscore = true;
         }
         PlayerPrefs.SetInt("CoinsCollected", endScarab + Mathf.RoundToInt(ScoreManager.scarabCount));
         coinLabel.text = (endScarab + Mathf.RoundToInt(ScoreManager.scarabCount)).ToString("000");
-        finishedLabel.text = Mathf.RoundToInt(meters).ToString("0000");
-        endLabel.text = (ScoreManager.scarabCount).ToString("000");
     }
 }
