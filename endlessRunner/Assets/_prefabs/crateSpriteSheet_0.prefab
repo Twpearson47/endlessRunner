@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95850712642840844}
   - component: {fileID: 61743142434585252}
   - component: {fileID: 114084595461799722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: crateSpriteSheet_0
   m_TagString: Death
   m_Icon: {fileID: 0}

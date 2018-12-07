@@ -22,9 +22,26 @@ public class Movement : MonoBehaviour
     public static bool isDead;
     public static bool isSliding;
 
-    public AudioClip VaseHit;
-    public AudioClip JumpGrunt;
+    public AudioClip VaseHit1;
+    public AudioClip VaseHit2;
+    public AudioClip VaseHit3;
+    public AudioClip VaseHit4;
+    public AudioClip JumpGrunt1;
+    public AudioClip JumpGrunt2;
+    public AudioClip Mummy;
     public AudioClip ObstacleHit;
+    public AudioClip RockFall1;
+    public AudioClip RockFall2;
+    public AudioClip RockFall3;
+    public AudioClip Rock1;
+    public AudioClip Rock2;
+    public AudioClip Slide1;
+    public AudioClip Slide2;
+    public AudioClip Scarab1;
+    public AudioClip Scarab2;
+    public AudioClip Crate;
+    public AudioClip Scorpion;
+    public AudioClip Death;
     public AudioSource Sound;
 
     private Animator movingPlayer;
@@ -50,17 +67,19 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
-            Sound.PlayOneShot(JumpGrunt);
             movingPlayer.SetBool("IsJumping", true);
+            SoundManager.instance.RandomizeSfx(JumpGrunt1, JumpGrunt2);
         }
         if (Input.GetKeyUp("space"))
         {
             movingPlayer.SetBool("IsJumping", false);
         }
-        if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && isGrounded == true)
         {
             isSliding = true;
             movingPlayer.SetBool("IsSliding", true);
+            SoundManager.instance.RandomizeSfx(Slide1, Slide2);
         }
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
@@ -85,11 +104,37 @@ public class Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (col.gameObject.layer == 8)
+        {
+            SoundManager.instance.RandomizeSfx(Rock1, Rock2);
+        }
+
+        if (col.gameObject.layer == 9)
+        {
+            Sound.PlayOneShot(Scorpion);
+        }
+
+        if (col.gameObject.layer == 10)
+        {
+            Sound.PlayOneShot(Crate);
+        }
+
+        if (col.gameObject.layer == 11)
+        {
+            Sound.PlayOneShot(Mummy);
+        }
+        
+        if (col.gameObject.layer == 12)
+        {
+            Sound.PlayOneShot(ObstacleHit);
+        } 
+
         if (col.gameObject.tag == ("Death"))
         {
             Debug.Log("Dead");
             isDead = true;
-            Sound.PlayOneShot(ObstacleHit);
+            SoundManager.instance.musicSource.Stop();
+            Sound.PlayOneShot(Death);
             hasDied();
         }
     }
@@ -139,24 +184,27 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == ("Scarab"))
         {
             CollectCoin(collision);
+            Sound.PlayOneShot(Scarab2);
         }
         if (collision.gameObject.tag == ("ScarabR"))
         {
             CollectCoin2(collision);
+            Sound.PlayOneShot(Scarab2);
         }
         if (collision.gameObject.tag == ("ScarabG"))
         {
             CollectCoin3(collision);
+            Sound.PlayOneShot(Scarab1);
         }
         if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
             CollectCoin2(collision);
-            Sound.PlayOneShot(VaseHit);
+            SoundManager.instance.RandomizeSfx(VaseHit2, VaseHit1, VaseHit4);
         }
         if ((collision.gameObject.tag == ("UrnB")) && isSliding == true)
         {
             CollectCoin3(collision);
-            Sound.PlayOneShot(VaseHit);
+            Sound.PlayOneShot(VaseHit3);
         }
     }
 

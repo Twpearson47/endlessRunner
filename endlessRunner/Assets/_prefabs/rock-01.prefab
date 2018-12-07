@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95417269842898242}
   - component: {fileID: 61121562635203638}
   - component: {fileID: 114293535856713894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rock-01
   m_TagString: Death
   m_Icon: {fileID: 0}

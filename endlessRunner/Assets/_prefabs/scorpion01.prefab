@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95301928713277206}
   - component: {fileID: 61366306143838256}
   - component: {fileID: 61251525666624090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: scorpion01
   m_TagString: Death
   m_Icon: {fileID: 0}

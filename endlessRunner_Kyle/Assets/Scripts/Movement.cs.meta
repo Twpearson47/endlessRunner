@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 17bc8ffc8d24033459043f4a7fce0743
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - VaseHit: {fileID: 8300000, guid: a60f1feacb8ddd04baf1c27aa0fd6735, type: 3}
+  - JumpGrunt: {fileID: 8300000, guid: 1091df4799fb65f468be82d0070f0798, type: 3}
+  - ObstacleHit: {fileID: 8300000, guid: 952d35acfc388cd489d1489fcdb0ef93, type: 3}
+  - Sound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

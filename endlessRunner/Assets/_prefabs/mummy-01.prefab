@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4320955303545734}
   - component: {fileID: 212769982648804462}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mummyArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4381972215633040}
   - component: {fileID: 212007429138715358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mummyLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4545625876340380}
   - component: {fileID: 61465285024655862}
   - component: {fileID: 61221978483713214}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mummy-01
   m_TagString: Death
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4422012021891462}
   - component: {fileID: 212863817796252648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: mummyBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

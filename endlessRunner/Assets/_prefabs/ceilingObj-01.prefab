@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4008415088834004}
   - component: {fileID: 212137467378854814}
   - component: {fileID: 95913052115066138}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ceilingobstacle7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4039366896444260}
   - component: {fileID: 212667839802421944}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Rope7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290010336679904}
   - component: {fileID: 58096219376813030}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ceilingObj-01
   m_TagString: Death
   m_Icon: {fileID: 0}
