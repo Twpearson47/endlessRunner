@@ -8,7 +8,7 @@ public class TurnOnGameOverPanel : MonoBehaviour {
 
     void Update ()
     {
-        if (Movement.isDead == true)
+        if (Movement.isDead == true && !gameOverPanel.activeSelf)
         {
             StartCoroutine(Wait());
         }
