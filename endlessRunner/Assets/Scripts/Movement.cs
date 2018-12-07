@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded == true)
+        if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
         {
             rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
@@ -76,6 +76,10 @@ public class Movement : MonoBehaviour
             currentTime = Time.time;
             meters = (currentTime - startTime) * (Mathf.RoundToInt(speed) + 10);
             meterLabel.text = Mathf.RoundToInt(meters).ToString("0000");
+        }
+        if (isDead == true)
+        {
+            movingPlayer.SetBool("IsDead", true);
         }
     }
 
