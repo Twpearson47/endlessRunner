@@ -69,10 +69,13 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
-        {
-            rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
+        if (Input.GetKeyDown("space") && isGrounded == true)
+ //           if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
+
+            {
+                rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
+            isSliding = false;
             movingPlayer.SetBool("IsJumping", true);
             SoundManager.instance.RandomizeSfx(JumpGrunt1, JumpGrunt2);
         }
@@ -81,17 +84,22 @@ public class Movement : MonoBehaviour
             movingPlayer.SetBool("IsJumping", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && isGrounded == true)
-        {
-            isSliding = true;
+        if (Input.GetKey(KeyCode.DownArrow))
+ //           if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
+
+            {
+                isSliding = true;
             movingPlayer.SetBool("IsSliding", true);
             SoundManager.instance.RandomizeSfx(Slide1, Slide2);
         }
+        else isSliding = false;
+
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
             isSliding = false;
             movingPlayer.SetBool("IsSliding", false);
         }
+
         if (isDead == false)
         {
             if (PauseMenu.GameIsPaused == false)

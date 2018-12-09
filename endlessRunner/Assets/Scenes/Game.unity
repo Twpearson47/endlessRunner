@@ -2189,7 +2189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1163981403}
-  gameOverWaitSeconds: 3
+  gameOverWaitSeconds: 1.8
 --- !u!1001 &1618684683
 Prefab:
   m_ObjectHideFlags: 0
