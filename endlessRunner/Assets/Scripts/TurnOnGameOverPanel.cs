@@ -16,9 +16,9 @@ public class TurnOnGameOverPanel : MonoBehaviour {
 
     IEnumerator Wait()
     {
-        Debug.Log("Start Wait() function. The time is: " + Time.time);
+ //       Debug.Log("Start Wait() function. The time is: " + Time.time);
         yield return new WaitForSeconds(gameOverWaitSeconds);   //Wait for 
-        Debug.Log("End Wait() function and the time is: " + Time.time);
+ //       Debug.Log("End Wait() function and the time is: " + Time.time);
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
         PauseMenu.GameIsPaused = true;

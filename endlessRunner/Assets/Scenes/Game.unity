@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -630,6 +630,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404880206679398, guid: ceee1120d3b5bd4489d4a044654a9aad, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceee1120d3b5bd4489d4a044654a9aad, type: 2}
@@ -1308,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710892b58066e6b47be9e53ffb253049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 1299445222497946, guid: 3f53e4b9a1ed79b4a89b4413131c21c6,
+  pooledObject: {fileID: 1911381316122488, guid: a3ecaa393f9af3b40842eeac6dc79a62,
     type: 2}
 --- !u!4 &707313439
 Transform:
@@ -1667,7 +1671,7 @@ MonoBehaviour:
   urnPool: {fileID: 972764467}
   urn2Pool: {fileID: 335063646}
   distanceCoins: 2
-  distanceFalling: 4
+  distanceFalling: 3
 --- !u!4 &928758698
 Transform:
   m_ObjectHideFlags: 0
@@ -2231,11 +2235,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4860038629311462, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4860038629311462, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1234287136067162, guid: 21ea2b8a37018ff40836ceb194ca8d38, type: 2}
       propertyPath: m_TagString

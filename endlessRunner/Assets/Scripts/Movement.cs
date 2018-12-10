@@ -51,6 +51,7 @@ public class Movement : MonoBehaviour
 
     private Animator movingPlayer;
     private Rigidbody2D rb;
+    private bool audioSlide;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         isDead = false;
         isSliding = false;
+        audioSlide = false;
         bestScore.enabled = false;
         scarabCount = 1;
         endScarab = PlayerPrefs.GetInt("CoinsCollected");
@@ -69,13 +71,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded == true)
- //           if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
-
-            {
-                rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
+           if (Input.GetKeyDown("space") && isGrounded == true && isSliding == false)
+        {
+            rb.AddForce(Vector2.up * JumpHeight, ForceMode2D.Impulse);
             isGrounded = false;
-            isSliding = false;
             movingPlayer.SetBool("IsJumping", true);
             SoundManager.instance.RandomizeSfx(JumpGrunt1, JumpGrunt2);
         }
@@ -85,16 +84,15 @@ public class Movement : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
- //           if (Input.GetKey(KeyCode.DownArrow) && isGrounded == true)
-
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                isSliding = true;
+                SoundManager.instance.RandomizeSfx(Slide1, Slide2);
+            }
+            isSliding = true;
             movingPlayer.SetBool("IsSliding", true);
-            SoundManager.instance.RandomizeSfx(Slide1, Slide2);
         }
-        else isSliding = false;
-
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        else
         {
             isSliding = false;
             movingPlayer.SetBool("IsSliding", false);
@@ -218,13 +216,16 @@ public class Movement : MonoBehaviour
             CollectCoin3(collision);
             Sound.PlayOneShot(Scarab1);
         }
-        if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
+
+       if ((collision.gameObject.tag == ("Urn")) && isSliding == true)
         {
+            Debug.Log("collision Urn isSliding = " + isSliding);
             CollectCoin2(collision);
             SoundManager.instance.RandomizeSfx(VaseHit2, VaseHit1, VaseHit4);
         }
         if ((collision.gameObject.tag == ("UrnB")) && isSliding == true)
         {
+            Debug.Log("collision UrnB isSliding = " + isSliding);
             CollectCoin3(collision);
             Sound.PlayOneShot(VaseHit3);
         }
