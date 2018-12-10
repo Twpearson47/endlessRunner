@@ -2656,8 +2656,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
         type: 2}
+      propertyPath: blockSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
       propertyPath: goddessSprites.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4606717163746484, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2740,7 +2745,7 @@ Prefab:
         type: 2}
       propertyPath: goddessSprites.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: d1cf511b7ebae1e4fa589e97d3c9bcc5,
+      objectReference: {fileID: 21300000, guid: 5912c3a84ca1e6b4f9955bd452c07be1,
         type: 3}
     - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
         type: 2}
@@ -2753,6 +2758,42 @@ Prefab:
       propertyPath: switchCount
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 355fa96214f7a6d48bbdbcb0e5d9607a,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1c5b2937b0ed8034b82c76110ab36727,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 95e5a4978f28e694b9efda5aae4474ea,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: goddessSprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: d1cf511b7ebae1e4fa589e97d3c9bcc5,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: blockSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: fff96ff8b4852e748913c031015f95f4,
+        type: 3}
+    - target: {fileID: 114009235657686982, guid: 17154d26da5e74241bde8e1de1b16706,
+        type: 2}
+      propertyPath: blockSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 67d2e1c687b344348888e2de27aa9982,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17154d26da5e74241bde8e1de1b16706, type: 2}
   m_IsPrefabParent: 0
