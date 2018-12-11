@@ -51,7 +51,6 @@ public class Movement : MonoBehaviour
 
     private Animator movingPlayer;
     private Rigidbody2D rb;
-    private bool audioSlide;
 
     void Start()
     {
@@ -62,7 +61,6 @@ public class Movement : MonoBehaviour
         isGrounded = true;
         isDead = false;
         isSliding = false;
-        audioSlide = false;
         bestScore.enabled = false;
         scarabCount = 1;
         endScarab = PlayerPrefs.GetInt("CoinsCollected");
