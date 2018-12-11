@@ -488,10 +488,10 @@ Prefab:
       propertyPath: m_Name
       value: AvoidObstacles
       objectReference: {fileID: 0}
-    - target: {fileID: 224805546602629694, guid: aa579f173a6205745975276c7db301a2,
+    - target: {fileID: 224265946147806724, guid: aa579f173a6205745975276c7db301a2,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -1.4975586
+      value: -0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 1569740929130160, guid: aa579f173a6205745975276c7db301a2, type: 2}
       propertyPath: m_IsActive
